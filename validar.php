@@ -15,7 +15,7 @@ $filas=mysqli_num_rows($resultado);
 
 if($filas){
   
-    header("location:login.php");
+    header("location:home.php");
 
 }else{
     echo "<script language='JavaScript'>
