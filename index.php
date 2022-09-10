@@ -27,7 +27,7 @@
 
                         <h2>Ingresa tus credenciales</h2>
                         <hr>
-                        <form action="validar.php" method="POST">
+                        <form action="controlador/validar.php" method="POST">
 
                         <label for="validationCustom05" class="form-label">Usuario *</label>
                         <input name="usuario" type="text" class="form-control" id="validationCustom05" required>

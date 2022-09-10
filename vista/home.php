@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sistema Administrativo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-        <link rel="stylesheet" href="assents/css/footers.css" />
+        <link rel="stylesheet" href="../assents/css/footers.css" />
 
     </head>
 
@@ -14,7 +14,7 @@
         <!-- BARRA DE MENUS -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <img src="assents/img/Logo Empresa.png" alt="empresa" width="90px">
+                <img src="../assents/img/Logo Empresa.png" alt="empresa" width="90px">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -75,7 +75,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Salir</a>
+                        <a class="nav-link active" aria-current="page" href="../index.php">Salir</a>
                     </li>
 
                 </ul>
@@ -99,21 +99,21 @@
                     </div>
                     <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assents/img/Checklist.jpg" data-bs-interval="30" class="d-block" alt="">
+                        <img src="../assents/img/Checklist.jpg" data-bs-interval="30" class="d-block" alt="">
                         <div class="carousel-caption d-none d-md-block">
                         <h5>Visitas En Terreno</h5>
                         <p>Por medio de los Checklist los Profesionales podrán supervisar.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assents/img/Asesoria en seguridad.jpg" data-bs-interval="30" class="d-block" alt="">
+                        <img src="../assents/img/Asesoria en seguridad.jpg" data-bs-interval="30" class="d-block" alt="">
                         <div class="carousel-caption d-none d-md-block">
                         <h5>Asesoría</h5>
                         <p>Nuestros profesionales te podrán asesorar y orientarte por una solución.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assents/img/Gestión en Seguridad.jpg" data-bs-interval="30" class="d-block" alt="">
+                        <img src="../assents/img/Gestión en Seguridad.jpg" data-bs-interval="30" class="d-block" alt="">
                         <div class="carousel-caption d-none d-md-block">
                         <h5>Gestión</h5>
                         <p>Con nuestra plataforma tendrás fácil acceso a un Profesional en Prevención.</p>
@@ -134,12 +134,12 @@
 
         <footer id="footer">
             <div class="marcas">
-                <img src="assents/img/logo-mutual@2x.png" alt="mutual">
-                <img src="assents/img/Logo_ISL_20cm.jpg" alt="isl">
-                <img src="assents/img/logo-mundo_achs-negro.png" alt="achs">
+                <img src="../assents/img/logo-mutual@2x.png" alt="mutual">
+                <img src="../assents/img/Logo_ISL_20cm.jpg" alt="isl">
+                <img src="../assents/img/logo-mundo_achs-negro.png" alt="achs">
             </div>
             <div class="logo_footer">
-                <img src="assents/img/Logo Empresa.png" alt="logo">
+                <img src="../assents/img/Logo Empresa.png" alt="logo">
             </div>
         </footer>
 

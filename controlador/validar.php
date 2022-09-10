@@ -1,5 +1,6 @@
 <?php
-include('db.php');
+include('../modelo/db.php');
+include('scripts.php');
 $usuario=$_POST['usuario'];
 $contraseña=$_POST['contraseña'];
 session_start();
@@ -19,13 +20,22 @@ $filas2=mysqli_num_rows($resultado2);
 
 if($filas || $filas2){
   
-    header("location:home.php");
+    header("location:../vista/home.php");
 
 }else{
-    echo "<script language='JavaScript'>
-    alert('El nombre de usuario o la contraseña son incorrectas, favor ingresar nuevamente!');
-    location.assign('index.php');
-    </script>";
+    echo '<script>
+        Swal.fire({
+         icon: "error",
+         title: "ERROR",
+         text: "El nombre de usuario o la contraseña no son correctos, favor intentar nuevamente!",
+         showConfirmButton: true,
+         confirmButtonText: "Aceptar"
+         }).then(function(result){
+            if(result.value){                   
+             window.location = "../index.php";
+            }
+         });
+        </script>';
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
