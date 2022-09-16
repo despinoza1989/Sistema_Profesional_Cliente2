@@ -14,7 +14,7 @@
         <!-- BARRA DE MENUS -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <img src="{% static 'app/img/Logo Empresa.png' %}" alt="empresa" width="90px">
+            <img src="assents/img/Logo Empresa.png" alt="empresa" width="90px">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
