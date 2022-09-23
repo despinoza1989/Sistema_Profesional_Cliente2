@@ -1,5 +1,5 @@
 <?php
-
+include('sweetAlert.php');
 class LoginController{
     function __construct(){
         //echo "esto funciona";
@@ -19,17 +19,31 @@ class LoginController{
         require_once "models/AutentificacionModel.php";
 
         $model= new AutentificacionModel();
-        $isvalid= $model->doLogin($usuario, $password);
-        echo $usuario;
+        $respuesta= $model->doLogin($usuario, $password); 
 
-        if($isvalid=='1'){
 
-            require_once "HomeController.php";
-            $ctrl = new HomeController();
+        if($respuesta['isvalid']=='1'){
+
+            $datosusuario= $model->obtenerUsuario($respuesta['id_personal']);
+            $_SESSION['usuario']=$datosusuario;
+            $_SESSION["activa"]=true;
+            header("refresh: 1; url=index.php?view=home");
             
         }else{
 
-            echo "usuario no valido";
+            echo '<script>
+            Swal.fire({
+             icon: "error",
+             title: "ERROR",
+             text: "El usuario o la contraseña no son correctos. Favor intentar nuevamente!",
+             showConfirmButton: true,
+             confirmButtonText: "Cerrar"
+             }).then(function(result){
+                if(result.value){                   
+                 window.location = "";
+                }
+             });
+            </script>';
         }
     }
 

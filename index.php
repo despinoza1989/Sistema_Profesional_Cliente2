@@ -10,17 +10,73 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Profesional Cliente</title>
+    <title>Sistema Profesional - Cliente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <link href="assents/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assents/css/footers.css"/>
+    
 </head>
 <body>
     <?php
         if(!isset($_SESSION["activa"])){
+
             require_once "controllers/LoginController.php";
             $ctrl = new LoginController();
+
         }else{
-            echo "Hola mundo". $_SESSION["activa"];
+
+            $request= "";
+
+            if(is_null($_GET['view'])){
+                $request= "/";
+            }else{
+                $request = $_GET['view'];
+            }          
+
+            switch ($request) {
+                case '':
+                case '/':
+                    require_once "controllers/HomeController.php";
+                    $ctrl = new HomeController();
+                    break;
+                
+                case 'home':
+                    require_once "controllers/HomeController.php";
+                    $ctrl = new HomeController();
+                    break;
+
+                case 'crear-visita':
+                    require_once "controllers/VisitaController.php";
+                    $ctrl = new VisitaController();
+                    break;
+
+                case 'crear-capacitacion':
+                    require_once "controllers/CrearCapacitacionController.php";
+                    $ctrl = new CrearCapacitacionController();
+                    break;
+
+                case 'crear-mejora':
+                    require_once "controllers/CrearMejoraController.php";
+                    $ctrl = new CrearMejoraController();
+                    break;
+
+                case 'crear-asesoria':
+                    require_once "controllers/CrearAsesoriaController.php";
+                    $ctrl = new CrearAsesoriaController();
+                    break;
+                
+                case 'logout':
+                    session_unset();
+                    header("refresh: 1; url=index.php");
+                    break;
+
+                default :
+                    require_once "controllers/HomeController.php";
+                    $ctrl = new HomeController();
+                    break;
+                    
+            }
+                
         }
         
     ?>

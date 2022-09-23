@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sistema Profesional Cliente</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-        <link rel="stylesheet" href="assents/css/footers.css" />
-
-    </head>
-
-    <body>
         <!-- BARRA DE MENUS -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -22,11 +9,11 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="index.php?view=home">Inicio</a>
                     </li>
                 <!-- PESTAÑA DE VISITA EN TERRENO CON SUB MENUS -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'agendar_visita_terreno' %}">Visita en Terreno</a>
+                    <a class="nav-link active" aria-current="page" href="index.php?view=crear-visita">Visita en Terreno</a>
                 </li>
 
                 <!-- PESTAÑA CAPACITACIONES CON SUB MENUS -->
@@ -35,7 +22,7 @@
                     Capacitación
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'crear_capacitacion' %}">Crear Capacitación</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=crear-capacitacion">Crear Capacitación</a></li>
                         <li><a class="dropdown-item" href="#">Lista de Capacitaciones</a></li>
                     </ul>
                 </li>
@@ -46,7 +33,7 @@
                         Mejoras
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'crear_mejora' %}">Crear Mejoras</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=crear-mejora">Crear Mejoras</a></li>
                         <li><a class="dropdown-item" href="#">Lista de Mejoras</a></li>
                     </ul>
                 </li>
@@ -57,7 +44,7 @@
                         Asesorías
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'crear_asesoria' %}">Solicitar Asesoría</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=crear-asesoria">Solicitar Asesoría</a></li>
                         <li><a class="dropdown-item" href="#">Lista de Asesorías</a></li>
                     </ul>
                 </li>
@@ -74,7 +61,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Salir</a>
+                    <a class="nav-link active" aria-current="page" href="index.php?view=logout">Salir</a>
                 </li>
 
             </ul>
@@ -82,9 +69,3 @@
           </div>
         </div>
       </nav>
-
-        <!-- BARRA DE MENUS LATERAL-->
-
-        <!-- BARRA DE MENUS LATERAL-->
-
-        <div id="contenido">

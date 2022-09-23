@@ -1,6 +1,6 @@
 <?php
 
-class HomeController{
+class CrearCapacitacionController{
     function __construct(){
         //echo "esto funciona";
 
@@ -10,8 +10,17 @@ class HomeController{
 
         //Llamar a la vista 
         require_once "views/layout/header.php";
-        require_once "views/layout/carrusel/carrusel.php";
+        require_once "views/layout/capacitacion/crear_capacitacion.php";
         require_once "views/layout/footer.php";
-        
+
     }
+
+    public function crearcapacitacion(){
+
+        //Llamar models del Personal
+        
+        require_once "models/CrearCapacitacionModel.php";
+   
+    }
+
 }

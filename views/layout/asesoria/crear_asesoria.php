@@ -64,7 +64,7 @@
     <br>
     <br>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary" type="submit">Generar Asesoría</button>
-        <button class="btn btn-primary" type="submit">Cancelar</button>
+        <button class="btn btn-primary col-2" type="submit">Generar Asesoría</button>
+        <button class="btn btn-warning col-2" type="submit">Cancelar</button>
     </div>
 </div>

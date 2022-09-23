@@ -1,9 +1,4 @@
-<?php
-
-include('../header.php');
-
-?>
-        <!-- BARRA DE MENUS LATERAL-->
+  <!-- BARRA DE MENUS LATERAL-->
         <div class="card-body" style="margin: 2em 5em;">
     <h1> Agendar Visita en Terreno</h1>
     <br>
@@ -12,25 +7,51 @@ include('../header.php');
     <br>
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
-            <label for="validationCustom05" class="form-label">Descripción Mejora</label>
+            <label for="validationCustom05" class="form-label">Rut</label>
             <input type="text" class="form-control" id="validationCustom05" required>
             <div class="invalid-feedback">
-                Favor de introducir una descripcion valida
+                Favor de introducir un rut válido
             </div>
         </div>
-        <div class="col-md-6">
-            <label for="validationCustom01" class="form-label">Rol</label>
+        <div class="col-md-3">
+            <label for="validationCustom01" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="validationCustom01" value="" required>
             <div class="valid-feedback">
-                Favor de introducir un Rol Valido
+                Favor de introducir un nombre Valido
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom01" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <div class="valid-feedback">
+                Favor de introducir un apellido Valido
             </div>
         </div>
         <div class="col-md-6">
-            <label for="validationCustom04" class="form-label">Rubro</label>
+            <label for="validationCustom05" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+                Favor de introducir un telefono valido
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">Correo</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Favor de introducir un correo Valido
+            </div>
+        </div>
+        <br>
+        <br>
+        <h2>Selección de Cliente</h2>
+        <br>
+
+        <div class="col-md-6">
+            <label for="validationCustom04" class="form-label">Rol</label>
             <select class="form-select" id="validationCustom04" required>
-                <option>Minería y Construcción</option>
-                <option>Minería y Construcción</option>
-                <option>Minería y Construcción</option>
+                <option>76.898.567-6</option>
+                <option>78.454.343-7</option>
+                <option>79.456.224-7</option>
             </select>
             <div class="invalid-feedback">
             </div>
@@ -39,21 +60,21 @@ include('../header.php');
             <label for="validationCustom05" class="form-label">Razón Social</label>
             <input type="text" class="form-control" id="validationCustom05" required>
             <div class="invalid-feedback">
-                Favor de introducir una razón social valida
+                Favor de escoger una opcion valida
             </div>
         </div>
         <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Telefono</label>
+            <label for="validationCustom03" class="form-label">Teléfono</label>
             <input type="text" class="form-control" id="validationCustom03" required>
             <div class="invalid-feedback">
-                Favor de introducir un Telefono Valido
+                Favor de introducir un telefono Valido
             </div>
         </div>
         <div class="col-md-6">
-            <label for="validationCustom01" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="validationCustom01" value="" required>
-            <div class="valid-feedback">
-                Favor de introducir una dirección valida
+            <label for="validationCustom03" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Favor de introducir una direccion Valido
             </div>
         </div>
         <div class="col-md-6">
@@ -67,21 +88,18 @@ include('../header.php');
             </div> 
         </div>
         <div class="col-md-6">
-            <label for="formFileMultiple" class="form-label">Cargar Evidencias</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple>
-          </div>
+            <label for="validationCustom03" class="form-label">Agendamiento Visita</label>
+            <input type="date" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Favor de introducir una fecha valida
+            </div>
+        </div>
+
     </form>
     <br>
     <br>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary" type="submit">Generar Mejora</button>
-        <button class="btn btn-primary" type="submit">Cancelar</button>
+        <button class="btn btn-primary col-2" type="submit">Generar Mejora</button>
+        <button class="btn btn-warning col-2" type="submit">Cancelar</button>
     </div>
 </div>
-
-
-<?php
-
-include('../footer.php');
-
-?>
