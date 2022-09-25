@@ -7,8 +7,8 @@
     <br>
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
-            <label for="validationCustom05" class="form-label">Rut</label>
-            <input type="text" class="form-control" id="validationCustom05" required>
+            <label for="validationCustom05" class="form-label" >Rut</label>
+            <input type="text" class="form-control" id="validationCustom05" required disabled="disabled">
             <div class="invalid-feedback">
                 Favor de introducir un rut válido
             </div>
