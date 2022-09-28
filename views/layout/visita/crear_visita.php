@@ -7,18 +7,13 @@
     <br>
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
-<<<<<<< HEAD
-            <label for="id_personal" class="form-label">Selecciona el profesional a cargo de la visita</label>
+            <label for="id_personal" class="form-label">Rut</label>
             <select class="form-select" id="id_personal" name="id_personal" required>
                 <option selected disabled value="">Seleccione Rut</option>
                 <?php foreach ($datos_personal as $row){ ?>
-                    <option value="<?php echo $row["id_personal"] ?>"></option>
+                    <option value="<?php echo $row["id_personal"] ?>"><?php echo $row["rut_personal"] ?></option>
                 <?php } ?>
             </select>
-=======
-            <label for="validationCustom05" class="form-label" >Rut</label>
-            <input type="text" class="form-control" id="validationCustom05" required disabled="disabled">
->>>>>>> 72350c82477178f3c66a533ed506a53cf9af0c8a
             <div class="invalid-feedback">
                 
             </div>
