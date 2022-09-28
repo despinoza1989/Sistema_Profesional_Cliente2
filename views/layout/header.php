@@ -34,7 +34,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?view=crear-mejora">Crear Mejoras</a></li>
-                        <li><a class="dropdown-item" href="#">Lista de Mejoras</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listado-mejora">Lista de Mejoras</a></li>
                     </ul>
                 </li>
 
