@@ -12,7 +12,7 @@
             <select class="form-select" id="id_personal" name="id_personal" required>
                 <option selected disabled value="">Seleccione Rut</option>
                 <?php foreach ($datos_personal as $row){ ?>
-                    <option value="<?php echo $row["id_personal"] ?>">Rut: <?php echo $row["rut_personal"] ?></option>
+                    <option value="<?php echo $row["id_personal"] ?>"></option>
                 <?php } ?>
             </select>
 =======
