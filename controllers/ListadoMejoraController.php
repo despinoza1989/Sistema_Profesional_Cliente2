@@ -1,6 +1,6 @@
 <?php
 
-class CrearMejoraController{
+class ListadoMejoraController{
     function __construct(){
         //echo "esto funciona";
 
@@ -8,22 +8,20 @@ class CrearMejoraController{
 
         require_once "models/MejoraModel.php";
         $model_mejoras = new MejoraModel();
+    
 
         //Llamar datos del modelo
 
-        if(isset($_POST["accion"])){
-            $model_mejoras->create($_POST);            
-            return;
-        }
+        $datos_mejora = $model_mejoras->getByListado();
 
         //Llamar a la vista 
         require_once "views/layout/header.php";
-        require_once "views/layout/mejora/crear_mejora.php";
+        require_once "views/layout/mejora/listado_mejora.php";
         require_once "views/layout/footer.php";
 
     }
 
-    public function crearmejora(){
+    public function listadomejora(){
 
         //Llamar models del Personal
         

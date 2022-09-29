@@ -60,6 +60,11 @@ session_start();
                     $ctrl = new CrearMejoraController();
                     break;
 
+                    case 'listado-mejora':
+                        require_once "controllers/ListadoMejoraController.php";
+                        $ctrl = new ListadoMejoraController();
+                        break;
+
                 case 'crear-asesoria':
                     require_once "controllers/CrearAsesoriaController.php";
                     $ctrl = new CrearAsesoriaController();
