@@ -49,6 +49,18 @@
                     </ul>
                 </li>
 
+
+                <!-- PESTAÑA ACCIDENTES CON SUB MENUS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Accidentes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index.php?view=reporte-accidente">Reportar Accidente</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=lista-accidente">Listado Accidentes</a></li>
+                    </ul>
+                </li>
+
                 <!-- PESTAÑA MANUALES CON SUB MENUS -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -14,6 +14,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <link href="assents/css/login.css" rel="stylesheet" />
     <link rel="stylesheet" href="assents/css/footers.css"/>
+    <script src="assents/js/validacion.js"></script>    
     
 </head>
 <body>
@@ -60,14 +61,24 @@ session_start();
                     $ctrl = new CrearMejoraController();
                     break;
 
-                    case 'listado-mejora':
-                        require_once "controllers/ListadoMejoraController.php";
-                        $ctrl = new ListadoMejoraController();
-                        break;
+                case 'listado-mejora':
+                    require_once "controllers/ListadoMejoraController.php";
+                    $ctrl = new ListadoMejoraController();
+                    break;
 
                 case 'crear-asesoria':
                     require_once "controllers/CrearAsesoriaController.php";
                     $ctrl = new CrearAsesoriaController();
+                    break;
+
+                case 'reporte-accidente':
+                    require_once "controllers/ReporteAccidenteController.php";
+                    $ctrl = new ReporteAccidenteController();
+                    break;
+
+                case 'lista-accidente':
+                    require_once "controllers/ListadoAccidenteController.php";
+                    $ctrl = new ListadoAccidenteController();
                     break;
                 
                 case 'logout':
