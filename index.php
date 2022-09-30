@@ -71,6 +71,16 @@ session_start();
                     $ctrl = new CrearAsesoriaController();
                     break;
 
+                case 'listar-asesoria':
+                    require_once "controllers/ListarAsesoriaController.php";
+                    $ctrl = new ListarAsesoriaController();
+                    break;  
+    
+                case 'respuesta-asesoria':
+                    require_once "controllers/RespuestaAsesoriaController.php";
+                    $ctrl = new RespuestaAsesoriaController();
+                    break; 
+
                 case 'reporte-accidente':
                     require_once "controllers/ReporteAccidenteController.php";
                     $ctrl = new ReporteAccidenteController();

@@ -1,6 +1,6 @@
 <?php
 
-class CrearAsesoriaController{
+class RespuestaAsesoriaController{
     function __construct(){
         //echo "esto funciona";
 
@@ -14,16 +14,15 @@ class CrearAsesoriaController{
         $model_rol = new ClienteModel();
 
 
-
-        require_once "models/SolicitudAsesoriaModel.php";
-        $model_sol_asesoria = new SolicitudAsesoriaModel();
+      //  require_once "models/SolicitudAsesoriaModel.php";
+      // $model_sol_asesoria = new SolicitudAsesoriaModel();
 
         //Llamar datos del modelo
 
-        if(isset($_POST["accion"])){
-            $model_sol_asesoria->create($_POST);            
-            return;
-        }
+      //  if(isset($_POST["accion"])){
+      //      $model_sol_asesoria->create($_POST);            
+      //      return;
+      //  }
 
         $datos_rubro = $model_rubro->getAll();
         $datos_rol = $model_rol->getAll();
@@ -34,7 +33,7 @@ class CrearAsesoriaController{
 
         //Llamar a la vista 
         require_once "views/layout/header.php";
-        require_once "views/layout/asesoria/crear_asesoria.php";
+        require_once "views/layout/asesoria/respuesta_asesoria.php";
         require_once "views/layout/footer.php";
 
     }

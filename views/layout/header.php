@@ -45,7 +45,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?view=crear-asesoria">Solicitar Asesoría</a></li>
-                        <li><a class="dropdown-item" href="#">Lista de Asesorías</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listar-asesoria">Lista de Asesorías</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=respuesta-asesoria">Respuesta Asesorías</a></li>
                     </ul>
                 </li>
 
