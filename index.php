@@ -90,6 +90,11 @@ session_start();
                     require_once "controllers/ListadoAccidenteController.php";
                     $ctrl = new ListadoAccidenteController();
                     break;
+
+                case 'pago-servicio':
+                    require_once "controllers/PagoController.php";
+                    $ctrl = new PagoController();
+                    break;
                 
                 case 'logout':
                     session_unset();

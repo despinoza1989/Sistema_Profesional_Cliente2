@@ -62,6 +62,11 @@
                     </ul>
                 </li>
 
+                <!-- PESTAÑA PAGO -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.php?view=pago-servicio">Pago</a>
+                </li>
+
                 <!-- PESTAÑA MANUALES CON SUB MENUS -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
