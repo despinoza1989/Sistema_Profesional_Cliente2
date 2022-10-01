@@ -71,7 +71,8 @@
 
         <br>
         <input type="hidden" id="accion" name="accion" value="registrar">
-
+        <input type="hidden" id="id_tipo_asesoria_sa" name="id_tipo_asesoria_sa" value="1">
+        <input type="hidden" id="id_cliente_sa" name="id_cliente_sa" value="1">
 
     </form>
     <br>

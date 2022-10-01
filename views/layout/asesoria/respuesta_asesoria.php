@@ -4,7 +4,7 @@
     <br>
     <h2> Cliente Solicitante </h2>
     <br>
-    <form id="respueta_asesoria" class="row g-3 needs-validation">
+    <form id="reportar_asesoria" class="row g-3 needs-validation">
 
         <div class="col-md-6">
             <label for="rol_cliente" class="form-label">Rol</label>
@@ -61,9 +61,15 @@
                 </div>
             </div> 
         </div>
+        <br>            
+        <div class="col-md-4">
+            <label for="img_check_proteccion" class="form-label">Adjuntar imagen</label>
+            <input class="form-control" type="file" id="img_check_proteccion" name="img_check_proteccion" multiple>
+        </div>
+        <br>                 
         <div class="col-md-12">
-            <label for="descripcion_asesoria" class="form-label">Detalle Evidencias</label>
-            <textarea  type="text" class="form-control" id="descripcion_asesoria" name="descripcion_asesoria" required></textarea>
+            <label for="respuesta_asesoria" class="form-label">Detalle Evidencias</label>
+            <textarea  type="text" class="form-control" id="respuesta_asesoria" name="respuesta_asesoria" required></textarea>
             <div class="invalid-feedback">
                 Favor de introducir una descripcion valida
             </div>
@@ -71,12 +77,56 @@
 
         <br>
         <input type="hidden" id="accion" name="accion" value="registrar">
+        <input type="hidden" id="id_solicitud_asesoria_ra" name="id_solicitud_asesoria_ra" value="1">
+        <input type="hidden" id="id_personal_sa" name="id_personal_sa" value="1">
+        
 
     </form>
     <br>
     <br>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary col-2" onclick="enviarRegistro()">Enviar Registro</button>
+        <button class="btn btn-primary col-2" onclick="respuestaAsesoria()">Enviar Registro</button>
         <button class="btn btn-warning col-2" onclick="location.reload()">Limpiar</button>
     </div>
 </div>
+
+
+<script>
+    function respuestaAsesoria(){
+        var respuesta_asesoria=document.getElementById("respueta_asesoria").value;
+        console.log( respuesta_asesoria)
+
+      
+        if(respuesta_asesoria==undefined || respuesta_asesoria==null || respuesta_asesoria.trim()=="" ){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Se debe de completar el campo',                
+                })            
+            return;
+
+        }
+
+
+        let formulario = new FormData(document.getElementById("reportar_asesoria"))
+        fetch('index.php?view=respuesta-asesoria', {
+            method: "post",
+            body: formulario
+        }).then((response) => {
+            
+            Swal.fire({
+                title: 'Asesoria reportada exitosamente',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'Ok',
+                }).then((result) => {
+                    location.reload();
+                })
+            /*acciones a realizar*/     
+        }).then((data) => {
+            /*mas acciones a realizar*/
+        })
+        
+    }
+
+</script>

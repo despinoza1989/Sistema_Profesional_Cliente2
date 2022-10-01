@@ -14,16 +14,21 @@ class RespuestaAsesoriaController{
         $model_rol = new ClienteModel();
 
 
-      //  require_once "models/SolicitudAsesoriaModel.php";
-      // $model_sol_asesoria = new SolicitudAsesoriaModel();
+        require_once "models/ClienteModel.php";
+        $model_cliente = new ClienteModel();
+
+
+        require_once "models/RespuestaAsesoriaModel.php";
+        $model_resp_asesoria = new RespuestaAsesoriaModel();
 
         //Llamar datos del modelo
 
-      //  if(isset($_POST["accion"])){
-      //      $model_sol_asesoria->create($_POST);            
-      //      return;
-      //  }
+        if(isset($_POST["accion"])){
+            $model_resp_asesoria->create($_POST);            
+            return;
+        }
 
+        $datos_cliente =  $model_cliente->getAll();
         $datos_rubro = $model_rubro->getAll();
         $datos_rol = $model_rol->getAll();
        // $datos_sol_asesoria = $model_sol_asesoria->getAll();
