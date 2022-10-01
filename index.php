@@ -95,6 +95,11 @@ session_start();
                     require_once "controllers/PagoController.php";
                     $ctrl = new PagoController();
                     break;
+
+                case 'check-list':
+                    require_once "controllers/CheckListController.php";
+                    $ctrl = new CheckListController();
+                    break;
                 
                 case 'logout':
                     session_unset();

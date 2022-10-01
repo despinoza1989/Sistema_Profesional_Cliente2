@@ -66,6 +66,9 @@
 
 
         <input type="hidden" id="accion" name="accion" value="registrar">
+        <input type="hidden" id="id_check_list_m" name="id_check_list_m" value="1">
+        <input type="hidden" id="id_cliente_m" name="id_cliente_m" value="1">
+        
 
     </form>
     <br>
@@ -90,7 +93,6 @@
         var obs_check_maquinaria=document.getElementById("obs_check_maquinaria").value;
         var doc_check_maquinaria=document.getElementById("doc_check_maquinaria").value;
         var img_check_maquinaria=document.getElementById("img_check_maquinaria").value;
-        console.log(obs_check_general, doc_check_general, img_check_general, obs_check_proteccion, doc_check_proteccion, img_check_proteccion, obs_check_herramientas, doc_check_herramientas, img_check_herramientas, obs_check_maquinaria, doc_check_maquinaria, img_check_maquinaria)
 
         
         if(obs_check_general==undefined || obs_check_general==null || obs_check_general.trim()=="" ){

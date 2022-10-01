@@ -62,6 +62,17 @@
                     </ul>
                 </li>
 
+                 <!-- PESTAÑA CHECKLIST CON SUB MENUS -->
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Check-List
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index.php?view=check-list">Generar Check-List</a></li>
+                        <li><a class="dropdown-item" href="#">Listado Check-List</a></li>
+                    </ul>
+                </li>
+
                 <!-- PESTAÑA PAGO -->
                 <li class="nav-item">
                     <a class="nav-link active" href="index.php?view=pago-servicio">Pago</a>
