@@ -100,6 +100,11 @@ session_start();
                     require_once "controllers/CheckListController.php";
                     $ctrl = new CheckListController();
                     break;
+
+                case 'listado-check-list':
+                    require_once "controllers/ListadoCheckListController.php";
+                    $ctrl = new ListadoCheckListController();
+                    break;
                 
                 case 'logout':
                     session_unset();

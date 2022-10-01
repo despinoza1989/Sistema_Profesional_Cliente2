@@ -23,12 +23,4 @@ class CrearMejoraController{
 
     }
 
-    public function crearmejora(){
-
-        //Llamar models del Personal
-        
-        require_once "models/MejoraModel.php";
-   
-    }
-
 }

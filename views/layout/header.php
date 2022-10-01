@@ -69,7 +69,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?view=check-list">Generar Check-List</a></li>
-                        <li><a class="dropdown-item" href="#">Listado Check-List</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listado-check-list">Listado Check-List</a></li>
                     </ul>
                 </li>
 
