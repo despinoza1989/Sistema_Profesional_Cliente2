@@ -9,11 +9,11 @@ class CrearAsesoriaController{
         require_once "models/RubroModel.php";
         $model_rubro = new RubroModel();
 
-
         require_once "models/ClienteModel.php";
         $model_rol = new ClienteModel();
 
-
+        require_once "models/ClienteModel.php";
+        $model_cliente = new ClienteModel();   
 
         require_once "models/SolicitudAsesoriaModel.php";
         $model_sol_asesoria = new SolicitudAsesoriaModel();
@@ -25,6 +25,7 @@ class CrearAsesoriaController{
             return;
         }
 
+        $datos_cliente =  $model_cliente->getAll();
         $datos_rubro = $model_rubro->getAll();
         $datos_rol = $model_rol->getAll();
        // $datos_sol_asesoria = $model_sol_asesoria->getAll();

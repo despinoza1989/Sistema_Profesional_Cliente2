@@ -72,6 +72,7 @@
         <br>
         <input type="hidden" id="accion" name="accion" value="registrar">
 
+
     </form>
     <br>
     <br>

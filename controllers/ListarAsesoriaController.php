@@ -8,7 +8,6 @@ class ListarAsesoriaController{
 
 
         require_once "models/SolicitudAsesoriaModel.php";
-
         $model_asesoria = new SolicitudAsesoriaModel();
 
 
@@ -23,7 +22,7 @@ class ListarAsesoriaController{
 
         //Llamar a la vista 
         require_once "views/layout/header.php";
-        require_once "views/layout/listar/listado_asesorias.php";
+        require_once "views/layout/asesoria/listado_asesorias.php";
         require_once "views/layout/footer.php";
 
     }
