@@ -22,8 +22,8 @@
 <br>
 <div class="col-5"><!-- COL 2 -->
  
-    <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="senaleticas" name="senaleticas">
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="senaleticas" name="senaleticas">
   <label class="form-check-label" for="senaleticas">
     Señaleticas
   </label>
@@ -274,8 +274,26 @@
 
 <script>
     function registrarCheck(){
+
         var fecha_check_list=document.getElementById("fecha_check_list").value;
-        var senaleticas=document.getElementById("senaleticas").value;
+
+        /*var check_list={
+          fecha_check_list
+          obs_check_general
+          obs_check_proteccion
+          obs_check_herramientas
+          obs_check_maquinaria
+          id_personal_ckl
+          id_cliente_ckl
+          id_rubro_ckl
+        }*/
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Señaletica',
+          valor_item: document.getElementById("senaleticas").checked
+        })
+
         var estado_contratos=document.getElementById("estado_contratos").value;
         var estado_extintores=document.getElementById("estado_extintores").value;
         var instalaciones_electricas=document.getElementById("instalaciones_electricas").value;
@@ -308,7 +326,9 @@
         var esp_tecnicas_maq=document.getElementById("esp_tecnicas_maq").value;
         var insepeccion_maquinaria=document.getElementById("insepeccion_maquinaria").value;
         var obs_check_maquinaria=document.getElementById("obs_check_maquinaria").value;
-
+        
+        console.log(fecha_check_list.replace('T',' '))
+        
         if(fecha_check_list==undefined || fecha_check_list==null || fecha_check_list.trim()=="" ){
             Swal.fire({
                 icon: 'error',
@@ -317,6 +337,25 @@
                 })            
             return;
 
+        }
+
+        var fecha = new Date(fecha_check_list);
+        var ahora = new Date();
+        var dias_milisegundos = fecha.getTime() - ahora.getTime();
+        var dias_diferencia = dias_milisegundos/(1000*60*60*24)
+
+        console.log(ahora, 'Fecha Ahora')
+        console.log(fecha_check_list, 'check')
+        console.log(dias_milisegundos, 'diferencia milisegundos')
+        console.log(dias_diferencia, 'diferencia dias')
+
+        if(dias_diferencia<15){
+          Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La fecha debe ser mayor o igual a 15 días',                
+                })            
+            return;
         }
 
         if(obs_check_general==undefined || obs_check_general==null || obs_check_general.trim()=="" ){

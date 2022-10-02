@@ -15,7 +15,8 @@ class VisitaController{
 
         $datos_personal = $model_personal->getAll();
         $datos_cliente = $model_cliente->getAll();
-
+        $datosusuario = $_SESSION['usuario'];
+        
         //Llamar a la vista 
         require_once "views/layout/header.php";
         require_once "views/layout/visita/crear_visita.php";

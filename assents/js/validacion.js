@@ -34,47 +34,6 @@ var validacion = {
         return !isNaN(valor) && valor.length>=1
     }, 
 
-	validarFecha: function(fecha) {
-
-
-		Hoy = new Date();//Fecha actual del sistema
- 
-		var AnyoFecha = Fecha1.getFullYear();
-		var MesFecha = Fecha1.getMonth();
-		var DiaFecha = Fecha1.getDate();
-		 
-		var AnyoHoy = Hoy.getFullYear();
-		var MesHoy = Hoy.getMonth();
-		var DiaHoy = Hoy.getDate();
-		 
-		if (AnyoFecha < AnyoHoy){
-			return fecha;
-			alert ("La fecha introducida es anterior a Hoy");
-		}
-		else{
-			if (AnyoFecha == AnyoHoy && MesFecha < MesHoy){
-				return fecha;
-				alert ("La fecha introducida es anterior a Hoy");			
-			}
-			else{
-				if (AnyoFecha == AnyoHoy && MesFecha == MesHoy && DiaFecha < DiaHoy){
-					return fecha;
-					alert ("La fecha introducida es anterior a Hoy");
-				}
-				else{
-					if (AnyoFecha == AnyoHoy && MesFecha == MesHoy && DiaFecha == DiaHoy){
-						return fecha;
-						 alert ("Has introducido la fecha de Hoy");
-					}
-					else{
-						return fecha;
-						alert ("La fecha introducida es posterior a Hoy");
-					}
-				}
-			}
-		}
-
-    }
 }
 
 
