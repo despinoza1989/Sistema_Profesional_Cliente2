@@ -7,9 +7,9 @@ class RegistroContrato {
     function getById($id_registro_contrato) {
         
         $conexion= Database::connect();
-        $query = "SELECT id_registro_contrato, id_cliente_rc, id_plan_servicio_rc, id_pago_servicio_rc,
-        c.rol_cliente, c.razon_social_cliente, c.telefono_cliente, c.email_cliente, c.direccion_cliente, c.estado_usuario_cliente,
-        c.usuario_cliente, c.tipo_usuario_c, c.id_rubro, ps.visita_mensual, ps.asesorias, ps.capacitaciones,
+        $query = "SELECT rc.id_registro_contrato, rc.id_cliente_rc, rc.id_plan_servicio_rc, rc.id_pago_servicio_rc,
+        c.rol_cliente, c.razon_social_cliente, c.telefono_cliente, c.email_cliente, c.direccion_cliente, c.estado_usuario_cliente, c.usuario_cliente, c.tipo_usuario_c, c.id_rubro, 
+        ps.valor_visita_mensual, ps.valor_asesorias, ps.valor_capacitaciones, ps.valor_mejoras, ps.valor_check_list,
         pss.estado_pago, pss.fecha_pago, pss.monto_pago, pss.id_cliente_ps,pss.id_plan_servicio_ps, pss.id_tipo_documento_ps,
         pss.id_tipo_pago_ps
         FROM registro_contrato AS rc
@@ -27,10 +27,9 @@ class RegistroContrato {
     function getAll() {
 
         $conexion= Database::connect();
-        $query = "
-        SELECT id_registro_contrato, id_cliente_rc, id_plan_servicio_rc, id_pago_servicio_rc,
-        c.rol_cliente, c.razon_social_cliente, c.telefono_cliente, c.email_cliente, c.direccion_cliente, c.estado_usuario_cliente,
-        c.usuario_cliente, c.tipo_usuario_c, c.id_rubro, ps.visita_mensual, ps.asesorias, ps.capacitaciones,
+        $query = "SELECT rc.id_registro_contrato, rc.id_cliente_rc, rc.id_plan_servicio_rc, rc.id_pago_servicio_rc,
+        c.rol_cliente, c.razon_social_cliente, c.telefono_cliente, c.email_cliente, c.direccion_cliente, c.estado_usuario_cliente, c.usuario_cliente, c.tipo_usuario_c, c.id_rubro, 
+        ps.valor_visita_mensual, ps.valor_asesorias, ps.valor_capacitaciones, ps.valor_mejoras, ps.valor_check_list,
         pss.estado_pago, pss.fecha_pago, pss.monto_pago, pss.id_cliente_ps,pss.id_plan_servicio_ps, pss.id_tipo_documento_ps,
         pss.id_tipo_pago_ps
         FROM registro_contrato AS rc
