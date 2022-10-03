@@ -22,7 +22,7 @@
             </div>
        
         <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_cliente_ra" name="id_cliente_ra" value="1">
+        <input type="hidden" id="id_cliente_ra" name="id_cliente_ra" value="<?php echo $datosusuariocliente['id_cliente']?>">
 
 
     </form>

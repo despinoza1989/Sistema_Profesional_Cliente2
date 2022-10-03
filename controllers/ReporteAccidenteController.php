@@ -11,6 +11,8 @@ class ReporteAccidenteController{
         
         //Llamar datos del modelo
         
+        $datosusuariocliente = $_SESSION['usuarioCliente'];
+
         if(isset($_POST["accion"])){
             $model_accidente->create($_POST);            
             return;
