@@ -34,6 +34,32 @@ class AutentificacionModel{
         return $respuesta;
     }
 
+    public function doLoginCliente($usuario, $password){
+
+        //return array('isvalid'=>'0');
+        
+        $consulta="SELECT id_cliente, usuario_cliente FROM cliente WHERE usuario_cliente='$usuario' AND password_cliente='$password'";
+        $conexion= Database::connect();
+        $resultado=$conexion->query($consulta);
+        $loginvalido='0';
+
+        $respuestaCliente=array('isvalid'=>'0');
+
+        while($row=mysqli_fetch_assoc($resultado)){           
+
+            if($row['usuario_cliente']==$usuario){
+                $loginvalido='1';
+                $respuestaCliente=(array)$row;
+            }
+
+        }
+        $resultado->close();
+        $conexion->close();
+        $respuestaCliente['isvalid']=$loginvalido;
+
+        return $respuestaCliente;
+    }
+
     public function obtenerUsuario($id_personal){
         
         $consulta="SELECT p.id_personal, p.rut_personal, p.telefono_personal, p.nombre_personal, p.apellidos_personal, p.email_personal, 
@@ -56,6 +82,27 @@ class AutentificacionModel{
         $resultado->close();
         $conexion->close();
         return $respuesta;
+    }
+
+    public function obtenerUsuarioCliente($id_cliente){
+        
+        $consulta="SELECT 
+        c.id_cliente, c.rol_cliente, c.razon_social_cliente, c.telefono_cliente, c.email_cliente, c.direccion_cliente, c.estado_usuario_cliente, 
+        c.usuario_cliente, c.tipo_usuario_c, c.id_rubro, r.tipo_rubro
+        FROM cliente AS c
+        LEFT JOIN rubro AS r ON r.id_rubro = c.id_rubro WHERE c.id_cliente  = '$id_cliente'";
+        $conexion= Database::connect();
+        $resultado=mysqli_query($conexion,$consulta);
+        $respuestaCliente=array();
+
+        while($row=$resultado->fetch_assoc()){
+            $respuestaCliente=$row;
+            
+        }
+
+        $resultado->close();
+        $conexion->close();
+        return $respuestaCliente;
     }
 
 }

@@ -28,6 +28,7 @@
                         <?php
                             if(isset($_POST['usuario'])&& isset($_POST['password'])){
                                 LoginController::validar($_POST['usuario'],$_POST['password']);
+                                LoginController::validarCliente($_POST['usuario'],$_POST['password']);
                             } 
                         ?>
                         <br>
