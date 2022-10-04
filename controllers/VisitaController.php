@@ -10,26 +10,26 @@ class VisitaController{
         $model_personal = new PersonalModel();
         require_once "models/ClienteModel.php";
         $model_cliente = new ClienteModel();
+        require_once "models/VisitaTerrenoModel.php";
+        $model_visita = new VisitaTerrenoModel();
 
         //Llamar datos del modelo
 
         $datos_personal = $model_personal->getAll();
         $datos_cliente = $model_cliente->getAll();
+        $datos_visita = $model_visita->getAll();
         $datosusuario = $_SESSION['usuario'];
+
+        if(isset($_POST["accion"])){
+            $model_visita->create($_POST);            
+            return;
+        }
         
         //Llamar a la vista 
         require_once "views/layout/header.php";
         require_once "views/layout/visita/crear_visita.php";
         require_once "views/layout/footer.php";
 
-    }
-
-    public function crearvisita(){
-
-        //Llamar models del Personal
-        
-        require_once "models/VisitaTerrenoModel.php";
-   
     }
 
 }
