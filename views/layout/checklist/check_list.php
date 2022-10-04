@@ -30,7 +30,7 @@
 </div>
  
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="estado_contratos" name="estado_contratos">
+  <input class="form-check-input" type="checkbox" id="estado_contratos" name="estado_contratos">
   <label class="form-check-label" for="estado_contratos">
     Estado de contratos
   </label>
@@ -38,70 +38,70 @@
 
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="estado_extintores" name="estado_extintores">
+  <input class="form-check-input" type="checkbox" id="estado_extintores" name="estado_extintores">
   <label class="form-check-label" for="estado_extintores">
     Estado de extintores
   </label>
 </div>
  
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="instalaciones_electricas" name="instalaciones_electricas">
+  <input class="form-check-input" type="checkbox" id="instalaciones_electricas" name="instalaciones_electricas">
   <label class="form-check-label" for="instalaciones_electricas">
     Instalaciones eléctricas
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="instalaciones_sanitarias" name="instalaciones_sanitarias">
+  <input class="form-check-input" type="checkbox" id="instalaciones_sanitarias" name="instalaciones_sanitarias">
   <label class="form-check-label" for="instalaciones_sanitarias">
     Instalaciones sanitarias
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="libro_asistencia" name="libro_asistencia">
+  <input class="form-check-input" type="checkbox" id="libro_asistencia" name="libro_asistencia">
   <label class="form-check-label" for="libro_asistencia">
     Libro de asistencia
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="alarma_incendios" name="alarma_incendios">
+  <input class="form-check-input" type="checkbox" id="alarma_incendios" name="alarma_incendios">
   <label class="form-check-label" for="alarma_incendios">
     Alarma de incendios
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="alumbrado_emergencia" name="alumbrado_emergencia">
+  <input class="form-check-input" type="checkbox" id="alumbrado_emergencia" name="alumbrado_emergencia">
   <label class="form-check-label" for="alumbrado_emergencia">
     Alumbrado de emergencia
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="salidas_emergencia" name="salidas_emergencia">
+  <input class="form-check-input" type="checkbox" id="salidas_emergencia" name="salidas_emergencia">
   <label class="form-check-label" for="salidas_emergencia">
     Salidas de emergencia
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="documentacion_trabajador" name="documentacion_trabajador">
+  <input class="form-check-input" type="checkbox" id="documentacion_trabajador" name="documentacion_trabajador">
   <label class="form-check-label" for="documentacion_trabajador">
     Documentación trabajador
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="agua_potable" name="agua_potable">
+  <input class="form-check-input" type="checkbox" id="agua_potable" name="agua_potable">
   <label class="form-check-label" for="agua_potable">
     Agua potable
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="centro_mutual" name="centro_mutual">
+  <input class="form-check-input" type="checkbox" id="centro_mutual" name="centro_mutual">
   <label class="form-check-label" for="centro_mutual">
     Centro mutual
   </label>
@@ -113,42 +113,42 @@
 </div>
 <br>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="protectores_auditivos" name="protectores_auditivos">
+  <input class="form-check-input" type="checkbox" id="protectores_auditivos" name="protectores_auditivos">
   <label class="form-check-label" for="protectores_auditivos">
     Protectores auditivos
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="casco_seguridad" name="casco_seguridad">
+  <input class="form-check-input" type="checkbox" id="casco_seguridad" name="casco_seguridad">
   <label class="form-check-label" for="defaucasco_seguridadltCheck2">
     Casco de seguridad
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="zapato_seguridad" name="zapato_seguridad">
+  <input class="form-check-input" type="checkbox" id="zapato_seguridad" name="zapato_seguridad">
   <label class="form-check-label" for="zapato_seguridad">
     Zapatos de seguridad
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="guantes_protectores" name="guantes_protectores">
+  <input class="form-check-input" type="checkbox" id="guantes_protectores" name="guantes_protectores">
   <label class="form-check-label" for="guantes_protectores">
     Guantes protectores
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="gafas_seguridad" name="gafas_seguridad">
+  <input class="form-check-input" type="checkbox" id="gafas_seguridad" name="gafas_seguridad">
   <label class="form-check-label" for="gafas_seguridad">
     Gafas de seguridad
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="mascarilla_respiratoria" name="mascarilla_respiratoria">
+  <input class="form-check-input" type="checkbox" id="mascarilla_respiratoria" name="mascarilla_respiratoria">
   <label class="form-check-label" for="mascarilla_respiratoria">
     Mascarilla respiratoria
   </label>
@@ -162,28 +162,28 @@
 <br>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="herramientas_adecuadas" name="herramientas_adecuadas">
+  <input class="form-check-input" type="checkbox" id="herramientas_adecuadas" name="herramientas_adecuadas">
   <label class="form-check-label" for="herramientas_adecuadas">
     Herramientas adecuadas
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="inspeccion_materiales" name="inspeccion_materiales">
+  <input class="form-check-input" type="checkbox" id="inspeccion_materiales" name="inspeccion_materiales">
   <label class="form-check-label" for="inspeccion_materiales">
     Inspección materiales
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="cableado_herramientas" name="cableado_herramientas">
+  <input class="form-check-input" type="checkbox" id="cableado_herramientas" name="cableado_herramientas">
   <label class="form-check-label" for="cableado_herramientas">
     Cableado de herramientas
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="proteccion_herramientas" name="proteccion_herramientas">
+  <input class="form-check-input" type="checkbox" id="proteccion_herramientas" name="proteccion_herramientas">
   <label class="form-check-label" for="proteccion_herramientas">
     Protección de herramientas
   </label>
@@ -197,49 +197,49 @@
 <br>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="luces_maquinarias" name="luces_maquinarias">
+  <input class="form-check-input" type="checkbox" id="luces_maquinarias" name="luces_maquinarias">
   <label class="form-check-label" for="luces_maquinarias">
     Luces de maquinarias
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="estanque_combustible" name="estanque_combustible">
+  <input class="form-check-input" type="checkbox" id="estanque_combustible" name="estanque_combustible">
   <label class="form-check-label" for="estanque_combustible">
     Estanque de combustible
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="motor_maquinaria" name="motor_maquinaria">
+  <input class="form-check-input" type="checkbox" id="motor_maquinaria" name="motor_maquinaria">
   <label class="form-check-label" for="motor_maquinaria">
     Motor de maquinaria
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="frenos_maquinaria" name="frenos_maquinaria">
+  <input class="form-check-input" type="checkbox" id="frenos_maquinaria" name="frenos_maquinaria">
   <label class="form-check-label" for="frenos_maquinaria">
     Frenos de maquinaria
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="boton_emergencia_maq" name="boton_emergencia_maq">
+  <input class="form-check-input" type="checkbox" id="boton_emergencia_maq" name="boton_emergencia_maq">
   <label class="form-check-label" for="boton_emergencia_maq">
     Boton de emergencia maquinaria
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="esp_tecnicas_maq" name="esp_tecnicas_maq">
+  <input class="form-check-input" type="checkbox" id="esp_tecnicas_maq" name="esp_tecnicas_maq">
   <label class="form-check-label" for="esp_tecnicas_maq">
     Especies tecnicas maquinaria
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="insepeccion_maquinaria" name="insepeccion_maquinaria">
+  <input class="form-check-input" type="checkbox" id="insepeccion_maquinaria" name="insepeccion_maquinaria">
   <label class="form-check-label" for="insepeccion_maquinaria">
     Inspección maquinaria
   </label>

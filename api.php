@@ -97,7 +97,7 @@ $app->get('/personal/{id_personal}', function (Request $request, Response $respo
 
 //MODELS CHECKLIST
 
-/*$app->get('/check-list', function (Request $request, Response $response, array $args) {
+$app->get('/check-list', function (Request $request, Response $response, array $args) {
      
     $model = new ChecklistModel();
     $datos = $model->getAll();
@@ -112,7 +112,7 @@ $app->get('/check-list/{id_check_list}', function (Request $request, Response $r
     $datos = $model->getById($id_check_list);
     return $response->withJson($datos);
 
-});*/
+});
 
 //MODELS CREAR CAPACITACIÓN
 
@@ -452,6 +452,25 @@ $app->get('/asignacion-profesional/{id_asignacion_profesional}', function (Reque
     $id_asignacion_profesional = $args['id_asignacion_profesional'];    
     $model = new AsignacionProfesionalModel();
     $datos = $model->getById($id_asignacion_profesional);
+    return $response->withJson($datos);
+
+});
+
+//MODELS DETALLE CHECKLIST
+
+$app->get('/detalle-check-list', function (Request $request, Response $response, array $args) {
+     
+    $model = new DetalleChecklistModel();
+    $datos = $model->getAll();
+    return $response->withJson($datos);
+
+});
+
+$app->get('/detalle-check-list/{id_detalle_check_list}', function (Request $request, Response $response, array $args) {
+    
+    $id_detalle_check_list = $args['id_detalle_check_list'];    
+    $model = new DetalleChecklistModel();
+    $datos = $model->getById($id_detalle_check_list);
     return $response->withJson($datos);
 
 });
