@@ -48,6 +48,8 @@
                         <li><a class="dropdown-item" href="index.php?view=crear-asesoria">Solicitar Asesoría</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listar-asesoria">Lista de Asesorías</a></li>
                         <li><a class="dropdown-item" href="index.php?view=respuesta-asesoria">Respuesta Asesorías</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=detalle-respuesta-asesoria">Respuesta Asesoría Profesional</a></li>
+
                     </ul>
                 </li>
 

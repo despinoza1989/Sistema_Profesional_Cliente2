@@ -9,7 +9,6 @@
                 <th>Correo</th>
                 <th>Teléfono</th>
                 <th>Detalle Asesoría</th>
-                <th>Profesional a Cargo</th>
             </tr>
 
             <?php foreach ($datos_asesoria as $row){ ?> 
@@ -28,7 +27,7 @@
 
                     </td>
                     <td>
-                        <a href="" class="btn btn-info btn-sm">Visualizar</a>                        
+                        <a href="" class="btn btn-info btn-sm">Ver Solicitud</a>                        
                     </td>         
                 </tr>
 

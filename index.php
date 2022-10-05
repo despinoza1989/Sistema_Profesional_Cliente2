@@ -110,6 +110,12 @@ session_start();
                     require_once "controllers/ListadoCheckListController.php";
                     $ctrl = new ListadoCheckListController();
                     break;
+
+                case 'detalle-respuesta-asesoria':
+                    require_once "controllers/DetalleRespuestaAsesoriaController.php";
+                    $ctrl = new DetalleRespuestaAsesoriaController();
+                    break;
+
                 
                 case 'logout':
                     session_unset();

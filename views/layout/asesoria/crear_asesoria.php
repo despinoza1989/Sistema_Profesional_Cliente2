@@ -7,65 +7,66 @@
     <form id="crear_asesoria" class="row g-3 needs-validation">
 
         <div class="col-md-6">
+            <label for="tipo_asesoria" class="form-label">Tipo de asesoría</label>
+            <select class="form-select" id="tipo_asesoria" name="tipo_asesoria" required>
+            <option selected disabled value="">Tipo de asesoría</option>
+                <?php foreach ($datos_tipo_asesoria as $row){ ?>
+                    <option value="<?php echo $row["id_tipo_asesoria"] ?>"><?php echo $row["tipo_asesoria"] ?></option>
+                <?php } ?>
+            </select>
+            <div class="invalid-feedback">
+            </div> 
+        </div>
+
+        <div class="col-md-6">
             <label for="rol_cliente" class="form-label">Rol</label>
-            <select class="form-select" id="rol_cliente" name="rol_cliente" required>
-            <option selected disabled value="">Seleccione Rol</option>
-                <?php foreach ($datos_rol as $row){ ?>
+            <select class="form-select" id="rol_cliente" name="rol_cliente"  required>
+                <option selected disabled value="">Seleccione Rol</option>
+                <?php foreach ($datos_cliente as $row){ ?>
                     <option value="<?php echo $row["id_cliente"] ?>"><?php echo $row["rol_cliente"] ?></option>
                 <?php } ?>
             </select>
             <div class="invalid-feedback">
-            </div> 
-        </div>    
-
-        <div class="col-md-6">            
-            <label for="id_rubro" class="form-label">Rubro</label>
-            <select class="form-select" id="id_rubro" name="id_rubro" required>
-            <option selected disabled value="">Seleccione Rubro</option>
-                <?php foreach ($datos_rubro as $row){ ?>
-                    <option value="<?php echo $row["id_rubro"] ?>"><?php echo $row["tipo_rubro"] ?></option>
-                <?php } ?>
-            </select>
-            <div class="invalid-feedback">
-            </div>
+        </div>
         </div>
         
         <div class="col-md-6">
-            <label for="razon_social" class="form-label">Razón Social</label>
-            <input type="text" class="form-control" id="razon_social" name="razon_social" value="" required>
+            <label for="razon_social_cliente" class="form-label">Razón Social</label>
+            <input type="text" class="form-control" id="razon_social_cliente" name="razon_social_cliente" disabled required>
             <div class="invalid-feedback">
-                Favor de introducir una razón social valida
+                Favor de escoger una opcion valida
             </div>
         </div>
+
         <div class="col-md-6">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" required>
+            <label for="telefono_cliente" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono_cliente" name="telefono_cliente" disabled required>
             <div class="invalid-feedback">
-                Favor de introducir un Telefono Valido
+                Favor de introducir un telefono Valido
             </div>
         </div>
         <div class="col-md-6">
-            <label for="direccion" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="direccion" name="direccion" required>
-            <div class="valid-feedback">
-                Favor de introducir una dirección valida
+            <label for="direccion_cliente" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion_cliente" name="direccion_cliente" disabled required>
+            <div class="invalid-feedback">
+                Favor de introducir una direccion Valido
             </div>
         </div>
+
         <div class="col-md-6">
-            <label for="email" class="form-label">E-mail</label>
+            <label for="email_cliente" class="form-label">E-mail</label>
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="email" name="email"
-                    aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="email_cliente" name="email_cliente" aria-describedby="inputGroupPrepend" disabled required>
                 <div class="invalid-feedback">
                 </div>
             </div> 
         </div>
+
         <div class="col-md-12">
             <label for="detalle_asesoria" class="form-label">Descripción Asesoría</label>
-            <textarea  type="text" class="form-control" id="detalle_asesoria" name="detalle_asesoria" required></textarea>
+            <textarea type="text" class="form-control" rows="10" cols="40" id="detalle_asesoria" name="detalle_asesoria" placeholder="Favor de ingresar el motivo de la asesoria.."></textarea>
             <div class="invalid-feedback">
-                Favor de introducir una descripcion valida
             </div>
         </div>
 
@@ -120,5 +121,41 @@
         })
         
     }
+
+</script>
+
+
+<script> 
+
+(function(){
+
+    document.getElementById('rol_cliente').addEventListener('change', onChangeRol)
+
+})()
+
+function onChangeRol(event){
+
+    var id_cliente= document.getElementById('rol_cliente').value;
+    
+    if(id_cliente && id_cliente>0){
+
+        fetch("api.php/cliente/" + id_cliente, {
+            method: "get"            
+        }).then(response=>response.json())
+        .then((datos)=>{
+
+            console.dir(datos)
+
+            document.getElementById('razon_social_cliente').value=datos.razon_social_cliente;
+            document.getElementById('telefono_cliente').value=datos.telefono_cliente;
+            document.getElementById('direccion_cliente').value=datos.direccion_cliente;
+            document.getElementById('email_cliente').value=datos.email_cliente;
+
+        })
+
+    }
+    
+}
+
 
 </script>

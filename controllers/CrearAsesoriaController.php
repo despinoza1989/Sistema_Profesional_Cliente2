@@ -18,6 +18,9 @@ class CrearAsesoriaController{
         require_once "models/SolicitudAsesoriaModel.php";
         $model_sol_asesoria = new SolicitudAsesoriaModel();
 
+        require_once "models/TipoAsesoriaModel.php";
+        $model_tipo_asesoria = new TipoAsesoriaModel();
+
         //Llamar datos del modelo
 
         if(isset($_POST["accion"])){
@@ -28,6 +31,7 @@ class CrearAsesoriaController{
         $datos_cliente =  $model_cliente->getAll();
         $datos_rubro = $model_rubro->getAll();
         $datos_rol = $model_rol->getAll();
+        $datos_tipo_asesoria = $model_tipo_asesoria->getAll();
        // $datos_sol_asesoria = $model_sol_asesoria->getAll();
        // $model_sol_asesoria = $model_sol_asesoria->getAll();
 
