@@ -7,8 +7,8 @@
     <form id="crear_asesoria" class="row g-3 needs-validation">
 
         <div class="col-md-6">
-            <label for="tipo_asesoria" class="form-label">Tipo de asesoría</label>
-            <select class="form-select" id="tipo_asesoria" name="tipo_asesoria" required>
+            <label for="id_tipo_asesoria_sa" class="form-label">Tipo de asesoría</label>
+            <select class="form-select" id="id_tipo_asesoria_sa" name="id_tipo_asesoria_sa" required>
             <option selected disabled value="">Tipo de asesoría</option>
                 <?php foreach ($datos_tipo_asesoria as $row){ ?>
                     <option value="<?php echo $row["id_tipo_asesoria"] ?>"><?php echo $row["tipo_asesoria"] ?></option>
@@ -72,7 +72,7 @@
 
         <br>
         <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_tipo_asesoria_sa" name="id_tipo_asesoria_sa" value="1">
+        
         <input type="hidden" id="id_cliente_sa" name="id_cliente_sa" value="1">
 
     </form>

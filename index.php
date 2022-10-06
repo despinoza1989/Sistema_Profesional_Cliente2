@@ -115,6 +115,11 @@ session_start();
                     require_once "controllers/DetalleRespuestaAsesoriaController.php";
                     $ctrl = new DetalleRespuestaAsesoriaController();
                     break;
+                
+                case 'listar-respuesta-asesoria':
+                    require_once "controllers/ListadoRespuestaAsesoriaController.php";
+                    $ctrl = new ListadoRespuestaAsesoriaController();
+                    break;    
 
                 
                 case 'logout':

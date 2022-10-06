@@ -11,11 +11,18 @@ class DetalleRespuestaAsesoriaController{
         require_once "models/ClienteModel.php";
         $model_cliente = new ClienteModel();
 
+        // model respuesta asesoria *******
+        require_once "models/RespuestaAsesoriaModel.php";
+        $model_respuesta_asesoria = new RespuestaAsesoriaModel();
 
         //Llamar datos del modelo
 
-        $datos_personal = $model_personal->getAll();
+        $datos_respuesta_asesoria = $model_respuesta_asesoria->getAll();
         $datosusuario = $_SESSION['usuario'];
+
+        
+        // ok $datos_personal = $model_personal->getAll();
+        // ok $datosusuario = $_SESSION['usuario'];
 
 
         //Llamar a la vista 

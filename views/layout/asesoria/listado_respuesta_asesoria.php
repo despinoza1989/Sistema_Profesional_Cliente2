@@ -3,11 +3,12 @@
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
                 <th>Tipo Asesoría</th>
-                <th>Fecha</th>
-                <th>Profesional a Cargo</th>
+                <th>Nombre </th>
+                <th>Apellido Profesional</th>
+
             </tr>
 
-            <?php foreach ($datos_asesoria as $row){ ?> 
+            <?php foreach ($datos_personal as $row){ ?> 
            
                 <tr>
                     <td><?php echo $row["tipo_asesoria"]?></td>

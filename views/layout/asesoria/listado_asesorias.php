@@ -27,7 +27,7 @@
 
                     </td>
                     <td>
-                        <a href="" class="btn btn-info btn-sm">Ver Solicitud</a>                        
+                    <a href="index.php?view=respuesta-asesoria" class="btn btn-info btn-sm">Ver Solicitud</a>
                     </td>         
                 </tr>
 
