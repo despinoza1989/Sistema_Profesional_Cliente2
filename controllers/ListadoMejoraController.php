@@ -21,12 +21,4 @@ class ListadoMejoraController{
 
     }
 
-    public function listadomejora(){
-
-        //Llamar models del Personal
-        
-        require_once "models/MejoraModel.php";
-   
-    }
-
 }

@@ -19,7 +19,7 @@
         </div>
 
           <br>
-    <h2> Protecion </h2>
+    <h2> Proteccion </h2>
     <br>
     <div class="col-md-4">
             <label for="obs_check_proteccion" class="form-label">Observaciones Protección</label>
