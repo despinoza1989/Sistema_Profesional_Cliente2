@@ -159,6 +159,25 @@ if(id_cliente && id_cliente>0){
 
         }
 
+        var fecha = new Date(fecha_visita);
+        var ahora = new Date();
+        var dias_milisegundos = fecha.getTime() - ahora.getTime();
+        var dias_diferencia = dias_milisegundos/(1000*60*60*24)
+
+        console.log(ahora, 'Fecha Ahora')
+        console.log(fecha_visita, 'check')
+        console.log(dias_milisegundos, 'diferencia milisegundos')
+        console.log(dias_diferencia, 'diferencia dias')
+
+        if(dias_diferencia<15){
+          Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La fecha debe ser mayor o igual a 15 días',                
+                })            
+            return;
+        }
+
         if(motivo_visita==undefined || motivo_visita==null || motivo_visita.trim()=="" ){
             Swal.fire({
                 icon: 'error',

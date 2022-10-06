@@ -17,6 +17,8 @@
                 <input type="datetime-local" class="form-control" id="fecha_check_list" name="fecha_check_list" required>
             </div>
 </div>
+<br>
+<h2>Chequeos Generales </h2>
  
 </div><!-- COL 1 -->
 <br>
@@ -112,6 +114,8 @@
     <textarea type="text" class="form-control" id="obs_check_general" name="obs_check_general" rows="3" required style="height: 200px;"></textarea>
 </div>
 <br>
+<h2>Chequeos de Protección </h2>
+<br>
 <div class="form-check">
   <input class="form-check-input" type="checkbox" id="protectores_auditivos" name="protectores_auditivos">
   <label class="form-check-label" for="protectores_auditivos">
@@ -159,8 +163,10 @@
     <label for="obs_check_proteccion" class="form-label" >Observación Chequeo Protección</label>
     <textarea type="text" class="form-control" id="obs_check_proteccion" name="obs_check_proteccion" rows="3" required style="height: 200px;"></textarea>
 </div>
-<br>
 
+<br>
+<h2>Chequeos de Herramientas </h2>
+<br>
 <div class="form-check">
   <input class="form-check-input" type="checkbox" id="herramientas_adecuadas" name="herramientas_adecuadas">
   <label class="form-check-label" for="herramientas_adecuadas">
@@ -195,7 +201,8 @@
     <textarea type="text" class="form-control" id="obs_check_herramientas" name="obs_check_herramientas" rows="3" required style="height: 200px;"></textarea>
 </div>
 <br>
-
+<h2>Chequeos de Maquinarias </h2>
+<br>
 <div class="form-check">
   <input class="form-check-input" type="checkbox" id="luces_maquinarias" name="luces_maquinarias">
   <label class="form-check-label" for="luces_maquinarias">
@@ -294,38 +301,198 @@
           valor_item: document.getElementById("senaleticas").checked
         })
 
-        var estado_contratos=document.getElementById("estado_contratos").value;
-        var estado_extintores=document.getElementById("estado_extintores").value;
-        var instalaciones_electricas=document.getElementById("instalaciones_electricas").value;
-        var instalaciones_sanitarias=document.getElementById("instalaciones_sanitarias").value;
-        var libro_asistencia=document.getElementById("libro_asistencia").value;
-        var alarma_incendios=document.getElementById("alarma_incendios").value;
-        var alumbrado_emergencia=document.getElementById("alumbrado_emergencia").value;
-        var salidas_emergencia=document.getElementById("salidas_emergencia").value;
-        var documentacion_trabajador=document.getElementById("documentacion_trabajador").value;
-        var agua_potable=document.getElementById("agua_potable").value;
-        var centro_mutual=document.getElementById("centro_mutual").value;
-        var obs_check_general=document.getElementById("obs_check_general").value;
-        var protectores_auditivos=document.getElementById("protectores_auditivos").value;
-        var casco_seguridad=document.getElementById("casco_seguridad").value;
-        var zapato_seguridad=document.getElementById("zapato_seguridad").value;
-        var guantes_protectores=document.getElementById("guantes_protectores").value;
-        var gafas_seguridad=document.getElementById("gafas_seguridad").value;
-        var mascarilla_respiratoria=document.getElementById("mascarilla_respiratoria").value;
-        var obs_check_proteccion=document.getElementById("obs_check_proteccion").value;
-        var herramientas_adecuadas=document.getElementById("herramientas_adecuadas").value;
-        var inspeccion_materiales=document.getElementById("inspeccion_materiales").value;
-        var cableado_herramientas=document.getElementById("cableado_herramientas").value;
-        var proteccion_herramientas=document.getElementById("proteccion_herramientas").value;
-        var obs_check_herramientas=document.getElementById("obs_check_herramientas").value;
-        var luces_maquinarias=document.getElementById("luces_maquinarias").value;
-        var estanque_combustible=document.getElementById("estanque_combustible").value;
-        var motor_maquinaria=document.getElementById("motor_maquinaria").value;
-        var frenos_maquinaria=document.getElementById("frenos_maquinaria").value;
-        var boton_emergencia_maq=document.getElementById("boton_emergencia_maq").value;
-        var esp_tecnicas_maq=document.getElementById("esp_tecnicas_maq").value;
-        var insepeccion_maquinaria=document.getElementById("insepeccion_maquinaria").value;
-        var obs_check_maquinaria=document.getElementById("obs_check_maquinaria").value;
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Estado Contratos',
+          valor_item: document.getElementById("estado_contratos").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Estado Extintores',
+          valor_item: document.getElementById("estado_extintores").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Instalaciones Eléctricas',
+          valor_item: document.getElementById("instalaciones_electricas").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Instalaciones Sanitarias',
+          valor_item: document.getElementById("instalaciones_sanitarias").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Libro Asistencia',
+          valor_item: document.getElementById("libro_asistencia").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Alarma Incendios',
+          valor_item: document.getElementById("alarma_incendios").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Alumbrado Emergencia',
+          valor_item: document.getElementById("alumbrado_emergencia").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Salidas Emergencia',
+          valor_item: document.getElementById("salidas_emergencia").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Documentación Trabajador',
+          valor_item: document.getElementById("documentacion_trabajador").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Agua Potable',
+          valor_item: document.getElementById("agua_potable").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Centro Mutual',
+          valor_item: document.getElementById("centro_mutual").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Observación General',
+          valor_item: document.getElementById("obs_check_general").value
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Protectores Auditivos',
+          valor_item: document.getElementById("protectores_auditivos").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Casco Seguridad',
+          valor_item: document.getElementById("casco_seguridad").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Zapato Seguridad',
+          valor_item: document.getElementById("zapato_seguridad").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Guantes Protectores',
+          valor_item: document.getElementById("guantes_protectores").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Gafas Seguridad',
+          valor_item: document.getElementById("gafas_seguridad").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Mascarilla Protectora',
+          valor_item: document.getElementById("mascarilla_respiratoria").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Observación Protección',
+          valor_item: document.getElementById("obs_check_proteccion").value
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Herramientas Adecuadas',
+          valor_item: document.getElementById("herramientas_adecuadas").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Inspecciones Materiales',
+          valor_item: document.getElementById("inspeccion_materiales").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Cableado Herramientas',
+          valor_item: document.getElementById("cableado_herramientas").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Protección Herramientas',
+          valor_item: document.getElementById("proteccion_herramientas").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Observación Herramientas',
+          valor_item: document.getElementById("obs_check_herramientas").value
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Luces Maquinarias',
+          valor_item: document.getElementById("luces_maquinarias").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Estanque Combustible',
+          valor_item: document.getElementById("estanque_combustible").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Motor Maquinaria',
+          valor_item: document.getElementById("motor_maquinaria").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Frenos Maquinaria',
+          valor_item: document.getElementById("frenos_maquinaria").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Botón Emergencia Maquinaria',
+          valor_item: document.getElementById("boton_emergencia_maq").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Especies Técnicas Maquinaria',
+          valor_item: document.getElementById("esp_tecnicas_maq").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Inspección Maquinaria',
+          valor_item: document.getElementById("insepeccion_maquinaria").checked
+        })
+
+        var detalle_check_list=[];
+        detalle_check_list.push({
+          nombre_item:'Observación Maquinaria',
+          valor_item: document.getElementById("obs_check_maquinaria").value
+        })
+
         
         console.log(fecha_check_list.replace('T',' '))
         
