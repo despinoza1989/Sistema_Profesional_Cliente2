@@ -5,7 +5,7 @@
     <form id="registro_pago" class="row g-3 needs-validation">
         <div class="col-md-6">
             <label for="rol_cliente" class="form-label">Rol</label>
-            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['razon_social_cliente']?>"  disabled required>
+            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['rol_cliente']?>"  disabled required>
         </div>
 
         <div class="col-md-6">
