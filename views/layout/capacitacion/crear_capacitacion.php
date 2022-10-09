@@ -4,7 +4,7 @@
     <br>
     <h2> Profesional </h2>
     <br>
-    <form class="row g-3 needs-validation" novalidate>
+    <form id="crear_capacitacion" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
             <label for="nombre_capacitacion" class="form-label">Nombre Capacitación</label>
             <input type="text" class="form-control" id="nombre_capacitacion" name="nombre_capacitacion"  required>
