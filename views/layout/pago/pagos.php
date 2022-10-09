@@ -32,7 +32,7 @@
         </div>
 
         <div class="col-md-6">
-            <label for="id_tipo_documento_ps" class="form-label">Rubro</label>
+            <label for="id_tipo_documento_ps" class="form-label">Tipo de Documento</label>
             <select class="form-select" id="id_tipo_documento_ps" name="id_tipo_documento_ps" required>
                 <option selected disabled value="">Seleccione Tipo de Documento</option>
                 <?php foreach ($datos_tipodocumento as $row){ ?>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="col-md-6">
-            <label for="id_tipo_pago_ps" class="form-label">Rubro</label>
+            <label for="id_tipo_pago_ps" class="form-label">Modo de Pago</label>
             <select class="form-select" id="id_tipo_pago_ps" name="id_tipo_pago_ps" required>
                 <option selected disabled value="">Seleccione Tipo de Pago</option>
                 <?php foreach ($datos_tipopago as $row){ ?>

@@ -114,6 +114,16 @@ $app->get('/check-list/{id_check_list}', function (Request $request, Response $r
 
 });
 
+$app->post('/check-list/crear', function (Request $request, Response $response, array $args){
+
+    $model = new ChecklistModel();
+    $model_detalle = new DetalleChecklistModel();
+    $datos = $model->getById($id_check_list);
+    return $response->withJson($datos);
+
+});
+
+
 //MODELS CREAR CAPACITACIÓN
 
 $app->get('/crear-capacitacion', function (Request $request, Response $response, array $args) {
