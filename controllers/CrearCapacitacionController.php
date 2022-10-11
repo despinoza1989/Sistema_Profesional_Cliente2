@@ -33,12 +33,4 @@ class CrearCapacitacionController{
 
     }
 
-    public function crearcapacitacion(){
-
-        //Llamar models del Personal
-        
-        require_once "models/CrearCapacitacionModel.php";
-   
-    }
-
 }

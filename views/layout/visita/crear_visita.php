@@ -201,9 +201,9 @@ if(id_cliente && id_cliente>0){
                 showDenyButton: false,
                 showCancelButton: false,
                 confirmButtonText: 'Ok',
-                }).then((result) => {
+            }).then((result) => {
                     location.reload();
-                })
+            })
             /*acciones a realizar*/     
         }).then((data) => {
             /*mas acciones a realizar*/
