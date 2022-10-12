@@ -43,7 +43,7 @@
        
         <div class="col-md-12">
             <label for="respuesta_asesoria" class="form-label">Detalle de Respuesta Profesional</label>
-            <textarea type="text" name="comentarios" class="form-control" rows="10" cols="40" id="respuesta_asesoria" name="respuesta_asesoria" placeholder="Detalle de la asesoría" disabled></textarea>
+            <textarea type="text" class="form-control" rows="10" cols="40" id="respuesta_asesoria" name="respuesta_asesoria" placeholder="Detalle de la asesoría" value="<?php echo $datos_respuesta_asesoria['respuesta_asesoria']?>" disabled></textarea>
             <div class="invalid-feedback">
             </div>
         </div>
@@ -51,10 +51,11 @@
    
         <input type="hidden" id="accion" name="accion" value="registrar">
         <input type="hidden" id="id_personal_vt" name="id_personal_vt" value="1">
-        <input type="hidden" id="id_cliente_vt" name="id_cliente_vt" value="1">
+        <input type="hidden" id="id_cliente_vt" name="id_cliente_vt" value="1"> 
 
     </form>
     <br>
     <br>
 
 </div>
+

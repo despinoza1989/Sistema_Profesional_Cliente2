@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <label for="id_tipo_asesoria_sa" class="form-label">Tipo de asesoría</label>
             <select class="form-select" id="id_tipo_asesoria_sa" name="id_tipo_asesoria_sa" required>
-            <option selected disabled value="">Tipo de asesoría</option>
+            <option selected disabled value="">Seleccione el tipo de asesoría</option>
                 <?php foreach ($datos_tipo_asesoria as $row){ ?>
                     <option value="<?php echo $row["id_tipo_asesoria"] ?>"><?php echo $row["tipo_asesoria"] ?></option>
                 <?php } ?>
@@ -20,52 +20,35 @@
 
         <div class="col-md-6">
             <label for="rol_cliente" class="form-label">Rol</label>
-            <select class="form-select" id="rol_cliente" name="rol_cliente"  required>
-                <option selected disabled value="">Seleccione Rol</option>
-                <?php foreach ($datos_cliente as $row){ ?>
-                    <option value="<?php echo $row["id_cliente"] ?>"><?php echo $row["rol_cliente"] ?></option>
-                <?php } ?>
-            </select>
-            <div class="invalid-feedback">
-        </div>
+            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['rol_cliente']?>"  disabled required>
         </div>
         
         <div class="col-md-6">
             <label for="razon_social_cliente" class="form-label">Razón Social</label>
-            <input type="text" class="form-control" id="razon_social_cliente" name="razon_social_cliente" disabled required>
-            <div class="invalid-feedback">
-                Favor de escoger una opcion valida
-            </div>
+            <input type="text" class="form-control" placeholder="" id="razon_social_cliente" name="razon_social_cliente=" value="<?php echo $datosusuariocliente['razon_social_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
             <label for="telefono_cliente" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono_cliente" name="telefono_cliente" disabled required>
-            <div class="invalid-feedback">
-                Favor de introducir un telefono Valido
-            </div>
-        </div>
-        <div class="col-md-6">
-            <label for="direccion_cliente" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="direccion_cliente" name="direccion_cliente" disabled required>
-            <div class="invalid-feedback">
-                Favor de introducir una direccion Valido
-            </div>
+            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['telefono_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
-            <label for="email_cliente" class="form-label">E-mail</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="email_cliente" name="email_cliente" aria-describedby="inputGroupPrepend" disabled required>
-                <div class="invalid-feedback">
-                </div>
-            </div> 
+            <label for="direccion_cliente" class="form-label">Dirección</label>
+            <input type="text" class="form-control" placeholder="" id="direccion_cliente" name="direccion_cliente" value="<?php echo $datosusuariocliente['direccion_cliente']?>" disabled required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="email_cliente" class="form-label">Email</label>
+            <div class="input-group mb-3"> 
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="" id="email_cliente" name="email_cliente" value="<?php echo $datosusuariocliente['email_cliente']?>" disabled required>
+            </div>
         </div>
 
         <div class="col-md-12">
             <label for="detalle_asesoria" class="form-label">Descripción Asesoría</label>
-            <textarea type="text" class="form-control" rows="10" cols="40" id="detalle_asesoria" name="detalle_asesoria" placeholder="Favor de ingresar el motivo de la asesoria.."></textarea>
+            <textarea type="text" class="form-control" rows="10" cols="40" id="detalle_asesoria" name="detalle_asesoria" placeholder="Favor de ingresar el motivo de la asesoria..."></textarea>
             <div class="invalid-feedback">
             </div>
         </div>
@@ -79,7 +62,7 @@
     <br>
     <br>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary col-2" onclick="crearAsesoria()">Generar Asesoría</button>
+        <button class="btn btn-primary col-2" onclick="crearAsesoria()">Solicitar Asesoría</button>
         <button class="btn btn-warning col-2" onclick="location.reload()">Limpiar</button>
     </div>
 </div>

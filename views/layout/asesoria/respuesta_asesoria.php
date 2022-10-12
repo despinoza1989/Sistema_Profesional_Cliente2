@@ -20,48 +20,32 @@
 
         <div class="col-md-6">
             <label for="rol_cliente" class="form-label">Rol</label>
-            <select class="form-select" id="rol_cliente" name="rol_cliente"  required>
-                <option selected disabled value="">Seleccione Rol</option>
-                <?php foreach ($datos_cliente as $row){ ?>
-                    <option value="<?php echo $row["id_cliente"] ?>"><?php echo $row["rol_cliente"] ?></option>
-                <?php } ?>
-            </select>
-            <div class="invalid-feedback">
-        </div>
+            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['rol_cliente']?>"  disabled required>
         </div>
         
         <div class="col-md-6">
             <label for="razon_social_cliente" class="form-label">Razón Social</label>
-            <input type="text" class="form-control" id="razon_social_cliente" name="razon_social_cliente" disabled required>
-            <div class="invalid-feedback">
-                Favor de escoger una opcion valida
-            </div>
+            <input type="text" class="form-control" placeholder="" id="razon_social_cliente" name="razon_social_cliente=" value="<?php echo $datosusuariocliente['razon_social_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
             <label for="telefono_cliente" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono_cliente" name="telefono_cliente" disabled required>
-            <div class="invalid-feedback">
-                Favor de introducir un telefono Valido
-            </div>
-        </div>
-        <div class="col-md-6">
-            <label for="direccion_cliente" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="direccion_cliente" name="direccion_cliente" disabled required>
-            <div class="invalid-feedback">
-                Favor de introducir una direccion Valido
-            </div>
+            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['telefono_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
-            <label for="email_cliente" class="form-label">E-mail</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="email_cliente" name="email_cliente" aria-describedby="inputGroupPrepend" disabled required>
-                <div class="invalid-feedback">
-                </div>
-            </div> 
+            <label for="direccion_cliente" class="form-label">Dirección</label>
+            <input type="text" class="form-control" placeholder="" id="direccion_cliente" name="direccion_cliente" value="<?php echo $datosusuariocliente['direccion_cliente']?>" disabled required>
         </div>
+
+        <div class="col-md-6">
+            <label for="email_cliente" class="form-label">Email</label>
+            <div class="input-group mb-3"> 
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="" id="email_cliente" name="email_cliente" value="<?php echo $datosusuariocliente['email_cliente']?>" disabled required>
+            </div>
+        </div>
+
         <div class="col-md-12">
             <label for="detalle_asesoria" class="form-label">Detalle de la Asesoría</label>
             <textarea type="text" name="comentarios" class="form-control" rows="10" cols="40" id="detalle_asesoria" name="detalle_asesoria" placeholder="Detalle de la asesoría" disabled></textarea>
@@ -135,38 +119,3 @@
 
 </script>
 
-
-<script> 
-
-(function(){
-
-    document.getElementById('rol_cliente').addEventListener('change', onChangeRol)
-
-})()
-
-function onChangeRol(event){
-
-    var id_cliente= document.getElementById('rol_cliente').value;
-    
-    if(id_cliente && id_cliente>0){
-
-        fetch("api.php/cliente/" + id_cliente, {
-            method: "get"            
-        }).then(response=>response.json())
-        .then((datos)=>{
-
-            console.dir(datos)
-
-            document.getElementById('razon_social_cliente').value=datos.razon_social_cliente;
-            document.getElementById('telefono_cliente').value=datos.telefono_cliente;
-            document.getElementById('direccion_cliente').value=datos.direccion_cliente;
-            document.getElementById('email_cliente').value=datos.email_cliente;
-
-        })
-
-    }
-    
-}
-
-
-</script>
