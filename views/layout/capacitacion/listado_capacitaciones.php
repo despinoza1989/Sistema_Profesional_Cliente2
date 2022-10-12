@@ -9,6 +9,7 @@
                 <th>Rut Profesional</th>
                 <th>Razon Social</th>
                 <th>Rol Cliente</th>
+                <th>Tipo Usuario a Capacitar</th>
 
             </tr>
 
@@ -21,6 +22,7 @@
                     <td><?php echo $row["rut_personal"]?></td>
                     <td><?php echo $row["razon_social_cliente"]?></td>
                     <td><?php echo $row["rol_cliente"]?></td>
+                    <td><?php echo $row["tipo_personal_capacitacion"]?></td>
                    
                     <td>
                      
