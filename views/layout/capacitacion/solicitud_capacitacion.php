@@ -4,7 +4,7 @@
     <br>
     <h2> Cliente Solicitante </h2>
     <br>
-    <form id="crear_capacitacion" class="row g-3 needs-validation">
+    <form id="solicitar-capacitacion" class="row g-3 needs-validation">
         <div class="col-md-4">
             <label for="nombre_solicitud_capacitacion" class="form-label">Nombre Capacitación</label>
             <input type="text" class="form-control" id="nombre_solicitud_capacitacion" name="nombre_solicitud_capacitacion" required>
@@ -78,12 +78,12 @@
     <br>
     <br>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary col-2" onclick="solicitudCapacitacion()">Solicitar Capacitacion</button>
+        <button class="btn btn-primary col-2" onclick="solicitarCapacitacion()">Solicitar Capacitacion</button>
         <button class="btn btn-warning col-2" onclick="location.reload()">Limpiar</button>
     </div>
 </div>
 <script>
-    function solicitudCapacitacion(){
+    function solicitarmoCapacitacion(){
         var nombre_solicitud_capacitacion=document.getElementById("nombre_solicitud_capacitacion").value;
         var fecha_solicitud_capacitacion=document.getElementById("fecha_solicitud_capacitacion").value;
         console.log(nombre_solicitud_capacitacion, fecha_solicitud_capacitacion)
@@ -101,8 +101,8 @@
 
 
 
-        let formulario = new FormData(document.getElementById("crear_capacitacion"))
-        fetch('index.php?view=solicitud-capacitacion', {
+        let formulario = new FormData(document.getElementById("solicitar-capacitacion"))
+        fetch('index.php?view=solicitar-capacitacion', {
             method: "post",
             body: formulario
         }).then((response) => {

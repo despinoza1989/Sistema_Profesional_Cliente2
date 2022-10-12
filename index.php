@@ -60,6 +60,11 @@ session_start();
                     require_once "controllers/SolicitarCapacitacionController.php";
                     $ctrl = new SolicitarCapacitacionController();
                     break;
+                
+                case 'listar-capacitacion':
+                    require_once "controllers/ListarCapacitacionesController.php";
+                    $ctrl = new ListarCapacitacionesController();
+                    break;
 
                 case 'crear-mejora':
                     require_once "controllers/CrearMejoraController.php";
