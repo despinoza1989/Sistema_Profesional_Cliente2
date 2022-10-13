@@ -3,7 +3,8 @@
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
                 <th>Tipo Asesoría</th>
-                <th>Nombre </th>
+                <th>Rut Profesional </th>
+                <th>Nombre Profesional </th>
                 <th>Apellido Profesional</th>
 
             </tr>
@@ -12,11 +13,11 @@
            
                 <tr>
                     <td><?php echo $row["tipo_asesoria"]?></td>
+                    <td><?php echo $row["rut_personal"]?></td>
                     <td><?php echo $row["nombre_personal"]?></td>
                     <td><?php echo $row["apellidos_personal"]?></td>                   
                     <td>
-                     
-                         
+                                             
 
                     </td>
                     <td>
