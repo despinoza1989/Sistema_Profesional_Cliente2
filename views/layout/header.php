@@ -23,8 +23,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php?view=crear-capacitacion">Crear Capacitación</a></li>
-                        <li><a class="dropdown-item" href="index.php?view=listar-capacitacion">Lista de Capacitaciones</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listar-capacitaciones">Lista de Capacitaciones</a></li>
                         <li><a class="dropdown-item" href="index.php?view=solicitar-capacitacion">Solicitud Capacitacion</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listar-solicitud-capacitacion">Lista de Solicitudes de Capacitaciones</a></li>
                     </ul>
                 </li>
 
