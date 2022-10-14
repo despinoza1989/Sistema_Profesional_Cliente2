@@ -3,13 +3,20 @@
 class DetalleRespuestaAsesoriaController{
     function __construct(){
         //echo "esto funciona";
+        $id_respuesta_asesoria = "";
+
+        if(isset($_GET['id_respuesta_asesoria']) || !is_null($_GET['id_respuesta_asesoria'])){
+
+            $id_respuesta_asesoria = $_GET['id_respuesta_asesoria'];
+
+        }
 
         //Lo primero es llamar el modelo
 
-        require_once "models/PersonalModel.php";
-        $model_personal = new PersonalModel();
-        require_once "models/ClienteModel.php";
-        $model_cliente = new ClienteModel();
+        //require_once "models/PersonalModel.php";
+        //$model_personal = new PersonalModel();
+        //require_once "models/ClienteModel.php";
+        //$model_cliente = new ClienteModel();
 
         // model respuesta asesoria *******
         require_once "models/RespuestaAsesoriaModel.php";
@@ -17,8 +24,8 @@ class DetalleRespuestaAsesoriaController{
 
         //Llamar datos del modelo
 
-        $datos_respuesta_asesoria = $model_respuesta_asesoria->getAll();
-        $datosusuario = $_SESSION['usuario'];
+        $datos_respuesta_asesoria = $model_respuesta_asesoria->getById($id_respuesta_asesoria);
+        $datosusuariocliente = $_SESSION['usuarioCliente'];
 
         
         // ok $datos_personal = $model_personal->getAll();

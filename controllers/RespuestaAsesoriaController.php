@@ -3,15 +3,21 @@
 class RespuestaAsesoriaController{
     function __construct(){
         //echo "esto funciona";
+        $id_solicitud_asesoria = "";
+
+        if(isset($_GET['id_solicitud_asesoria']) || !is_null($_GET['id_solicitud_asesoria'])){
+
+            $id_solicitud_asesoria = $_GET['id_solicitud_asesoria'];
+
+        }
 
         //Lo primero es llamar el modelo
 
-        require_once "models/ClienteModel.php";
-        $model_cliente = new ClienteModel();
+        require_once "models/SolicitudAsesoriaModel.php";
+        $model_solicitud = new SolicitudAsesoriaModel();
         require_once "models/RespuestaAsesoriaModel.php";
         $model_resp_asesoria = new RespuestaAsesoriaModel();
-        require_once "models/TipoAsesoriaModel.php";
-        $model_tipo_asesoria = new TipoAsesoriaModel();
+    
 
         //Llamar datos del modelo
 
@@ -20,9 +26,10 @@ class RespuestaAsesoriaController{
             return;
         }
 
-        $datosusuariocliente = $_SESSION['usuarioCliente'];
-        $datos_tipo_asesoria = $model_tipo_asesoria->getAll();
-
+        //$datosusuariocliente = $_SESSION['usuarioCliente'];
+        
+        $datosusuario = $_SESSION['usuario'];
+        $datos_solicitud = $model_solicitud->getById($id_solicitud_asesoria);
 
         //Llamar a la vista 
         require_once "views/layout/header.php";

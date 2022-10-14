@@ -1,6 +1,6 @@
 
 <div class="card" style="margin: 1px 5em;">
-        <h3 align="center" >Listado de Asesorias</h3>
+        <h3 align="center" >Listado de Asesorias Solicitadas por Cliente</h3>
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
                 <th>Razon Social</th>
@@ -27,7 +27,7 @@
 
                     </td>
                     <td>
-                    <a href="index.php?view=respuesta-asesoria" class="btn btn-info btn-sm">Ver Solicitud</a>
+                    <a href="index.php?view=respuesta-asesoria&id_solicitud_asesoria=<?php echo $row["id_solicitud_asesoria"]?>" class="btn btn-info btn-sm">Ver Solicitud</a>
                     </td>         
                 </tr>
 
