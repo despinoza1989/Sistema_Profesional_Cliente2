@@ -47,8 +47,8 @@
             <label for="rol_cliente" class="form-label">Rol</label>
             <select class="form-select" id="rol_cliente" name="rol_cliente"  required>
                 <option selected disabled value="">Seleccione Rol</option>
-                <?php foreach ($datos_cliente as $row){ ?>
-                    <option value="<?php echo $row["id_cliente"] ?>"><?php echo $row["rol_cliente"] ?></option>
+                <?php foreach ($dato_asignacion as $row){ ?>
+                    <option value="<?php echo $row["id_asignacion_profesional"] ?>"><?php echo $row["rol_cliente"] ?></option>
                 <?php } ?>
             </select>
             <div class="invalid-feedback">
@@ -99,7 +99,7 @@
         </div>
 
         <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_personal_vt" name="id_personal_vt" value="1">
+        <input type="hidden" id="id_personal_vt" name="id_personal_vt" value="<?php echo $datosusuario['id_personal']?>">
         <input type="hidden" id="id_cliente_vt" name="id_cliente_vt" value="1">
 
     </form>
@@ -125,7 +125,7 @@ var id_cliente= document.getElementById('rol_cliente').value;
 
 if(id_cliente && id_cliente>0){
 
-    fetch("api.php/cliente/" + id_cliente, {
+    fetch("api.php/asignacion-profesional/" + id_cliente, {
         method: "get"            
     }).then(response=>response.json())
     .then((datos)=>{

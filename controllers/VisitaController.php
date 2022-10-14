@@ -12,6 +12,8 @@ class VisitaController{
         $model_cliente = new ClienteModel();
         require_once "models/VisitaTerrenoModel.php";
         $model_visita = new VisitaTerrenoModel();
+        require_once "models/AsignacionProfesionalModel.php";
+        $model_asignacion = new AsignacionProfesionalModel();
 
         //Llamar datos del modelo
 
@@ -19,6 +21,7 @@ class VisitaController{
         $datos_cliente = $model_cliente->getAll();
         $datos_visita = $model_visita->getAll();
         $datosusuario = $_SESSION['usuario'];
+        $dato_asignacion = $model_asignacion->getAll();
 
         if(isset($_POST["accion"])){
             $model_visita->create($_POST);            

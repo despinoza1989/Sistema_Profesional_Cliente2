@@ -2,20 +2,114 @@
     <h1> Lista de Check </h1>
     <br>
     <br>
-    <h2> Favor seleccionar las opciones según corresponda: </h2>
+    <h2> Profesional a Cargo</h2>
     <br>
     <form id="registro_check" class="row g-3 needs-validation">
 
         <div class="container">
 
+
+
             <div class="row">
                 <!-- ROW -->
 
-                <div class="col-5">
+                <div class="col-md-6">
+                    <label for="rut_personal" class="form-label">Rut</label>
+                    <input type="text" class="form-control" id="rut_personal" name="rut_personal"
+                        value="<?php echo $datosusuario['rut_personal']?>" disabled required>
+                </div>
+                <div class="col-md-3">
+                    <label for="nombre_personal" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre_personal" name="nombre_personal"
+                        value="<?php echo $datosusuario['nombre_personal']?>" disabled required>
+                    <div class="valid-feedback">
+                        Favor de introducir un nombre Valido
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidos_personal" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos_personal" name="apellidos_personal"
+                        value="<?php echo $datosusuario['apellidos_personal']?>" disabled required>
+                    <div class="valid-feedback">
+                        Favor de introducir un apellido Valido
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono_personal" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" id="telefono_personal" name="telefono_personal"
+                        value="<?php echo $datosusuario['apellidos_personal']?>" disabled required>
+                    <div class="invalid-feedback">
+                        Favor de introducir un telefono valido
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email_personal" class="form-label">Correo</label>
+                    <input type="text" class="form-control" id="email_personal" name="email_personal"
+                        change="onChangeRol" value="<?php echo $datosusuario['email_personal']?>" disabled required>
+                    <div class="invalid-feedback">
+                        Favor de introducir un correo Valido
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2>Selección de Cliente</h2>
+                <br>
+
+                <div class="col-md-6">
+                    <label for="rol_cliente" class="form-label">Rol</label>
+                    <select class="form-select" id="rol_cliente" name="rol_cliente" required>
+                        <option selected disabled value="">Seleccione Rol</option>
+                        <?php foreach ($dato_asignacion as $row){ ?>
+                            <option value="<?php echo $row["id_asignacion_profesional"] ?>"><?php echo $row["rol_cliente"] ?></option>
+                        <?php } ?>
+                    </select>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="razon_social_cliente" class="form-label">Razón Social</label>
+                    <input type="text" class="form-control" id="razon_social_cliente" name="razon_social_cliente"
+                        disabled required>
+                    <div class="invalid-feedback">
+                        Favor de escoger una opcion valida
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono_cliente" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono_cliente" name="telefono_cliente" disabled
+                        required>
+                    <div class="invalid-feedback">
+                        Favor de introducir un telefono Valido
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="direccion_cliente" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion_cliente" name="direccion_cliente" disabled
+                        required>
+                    <div class="invalid-feedback">
+                        Favor de introducir una direccion Valido
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email_cliente" class="form-label">E-mail</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" class="form-control" id="email_cliente" name="email_cliente"
+                            aria-describedby="inputGroupPrepend" disabled required>
+                        <div class="invalid-feedback">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
                     <!-- COL 1 -->
 
+
                     <div class="mb-2">
-                        <label for="fecha_check_list" class="form-label">Fecha</label>
+                        <label for="fecha_check_list" class="form-label">Fecha Check-List (La fecha debe ser mayor o
+                            igual a 15 días)</label>
                         <input type="datetime-local" class="form-control" id="fecha_check_list" name="fecha_check_list"
                             required>
                     </div>
@@ -285,9 +379,11 @@
         </div><!-- ROW -->
 
         <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_personal_ckl" name="id_personal_ckl" value="1">
-        <input type="hidden" id="id_cliente_ckl" name="id_cliente_ckl" value="1">
-        <input type="hidden" id="id_rubro_ckl" name="id_rubro_ckl" value="1">
+        <input type="hidden" id="id_personal_ckl" name="id_personal_ckl"
+            value="<?php echo $datosusuario['id_personal']?>">
+        <input type="hidden" id="id_cliente_ckl" name="id_cliente_ckl"
+            value="<?php echo $datos_cliente["id_cliente"]?>">
+        <input type="hidden" id="id_rubro_ckl" name="id_rubro_ckl" value="<?php echo $datos_cliente["id_rubro"]?>">
 
 
     </form>
@@ -299,6 +395,42 @@
     </div>
 </div>
 
+
+
+
+<script>
+
+(function(){
+
+document.getElementById('rol_cliente').addEventListener('change', onChangeRol)
+
+})()
+
+function onChangeRol(event){
+
+var id_cliente= document.getElementById('rol_cliente').value;
+
+if(id_cliente && id_cliente>0){
+
+    fetch("api.php/asignacion-profesional/" + id_cliente, {
+        method: "get"            
+    }).then(response=>response.json())
+    .then((datos)=>{
+
+        console.dir(datos)
+
+        document.getElementById('razon_social_cliente').value=datos.razon_social_cliente;
+        document.getElementById('telefono_cliente').value=datos.telefono_cliente;
+        document.getElementById('direccion_cliente').value=datos.direccion_cliente;
+        document.getElementById('email_cliente').value=datos.email_cliente;
+
+    })
+
+}
+
+}
+
+</script>
 
 <script>
 function registrarCheck() {
@@ -378,7 +510,7 @@ function registrarCheck() {
         valor_item: document.getElementById("centro_mutual").checked
     })
 
-    var obs_check_general=document.getElementById("obs_check_general").value
+    var obs_check_general = document.getElementById("obs_check_general").value
 
     detalle_check_list.push({
         nombre_item: 'Protectores Auditivos',
@@ -410,7 +542,7 @@ function registrarCheck() {
         valor_item: document.getElementById("mascarilla_respiratoria").checked
     })
 
-    var obs_check_proteccion=document.getElementById("obs_check_proteccion").value
+    var obs_check_proteccion = document.getElementById("obs_check_proteccion").value
 
     detalle_check_list.push({
         nombre_item: 'Herramientas Adecuadas',
@@ -432,7 +564,7 @@ function registrarCheck() {
         valor_item: document.getElementById("proteccion_herramientas").checked
     })
 
-    var obs_check_herramientas= document.getElementById("obs_check_herramientas").value
+    var obs_check_herramientas = document.getElementById("obs_check_herramientas").value
 
     detalle_check_list.push({
         nombre_item: 'Luces Maquinarias',
@@ -469,8 +601,8 @@ function registrarCheck() {
         valor_item: document.getElementById("insepeccion_maquinaria").checked
     })
 
-    var obs_check_maquinaria= document.getElementById("obs_check_maquinaria").value
-  
+    var obs_check_maquinaria = document.getElementById("obs_check_maquinaria").value
+
 
 
     console.log(fecha_check_list.replace('T', ' '))
@@ -513,26 +645,26 @@ function registrarCheck() {
         return;
 
     }
-    
-  // Cambiar los hiden rubro y cliente por un combo box
-  // el hidden del personal por el cache del profesional 
-  // Enviar el request a la api
 
-    let request={
+    // Cambiar los hiden rubro y cliente por un combo box
+    // el hidden del personal por el cache del profesional 
+    // Enviar el request a la api
 
-      check_list:{
-        fecha_check_list: fecha_check_list,
-        obs_check_general: obs_check_general,
-        obs_check_proteccion: obs_check_proteccion,
-        obs_check_herramientas: obs_check_herramientas,
-        obs_check_maquinaria: obs_check_maquinaria,
-        id_personal_ckl: id_personal_ckl,
-        id_cliente_ckl: id_cliente_ckl,
-        id_rubro_ckl: id_rubro_ckl,
+    let request = {
 
-      },
+        check_list: {
+            fecha_check_list: fecha_check_list,
+            obs_check_general: obs_check_general,
+            obs_check_proteccion: obs_check_proteccion,
+            obs_check_herramientas: obs_check_herramientas,
+            obs_check_maquinaria: obs_check_maquinaria,
+            id_personal_ckl: id_personal_ckl,
+            id_cliente_ckl: id_cliente_ckl,
+            id_rubro_ckl: id_rubro_ckl,
 
-      detalle_check_list: detalle_check_list,
+        },
+
+        detalle_check_list: detalle_check_list,
 
     }
 
@@ -553,7 +685,7 @@ function registrarCheck() {
         })
         /*acciones a realizar*/
     //}).then((data) => {
-        /*mas acciones a realizar*/
+    /*mas acciones a realizar*/
     //})
 
 }

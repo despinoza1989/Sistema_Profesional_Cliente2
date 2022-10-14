@@ -8,6 +8,12 @@ class CheckListController{
 
         require_once "models/ChecklistModel.php";
         $model_check_list = new ChecklistModel();
+        require_once "models/ClienteModel.php";
+        $model_cliente = new ClienteModel();
+        require_once "models/PersonalModel.php";
+        $model_personal = new PersonalModel();
+        require_once "models/AsignacionProfesionalModel.php";
+        $model_asignacion = new AsignacionProfesionalModel();
 
         //Llamar datos del modelo
 
@@ -15,6 +21,11 @@ class CheckListController{
             $model_check_list->create($_POST);            
             return;
         }
+
+        
+        $datosusuario = $_SESSION['usuario'];
+        $datos_cliente = $model_cliente->getAll();
+        $dato_asignacion = $model_asignacion->getAll();
 
 
         //Llamar a la vista 
