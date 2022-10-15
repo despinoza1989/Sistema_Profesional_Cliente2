@@ -19,11 +19,11 @@
             </div>
         </div>
         <div class="col-md-4">
-            <label for="tipo_personal_capacitacion" class="form-label">Tipo Personal a Capacitar</label>
-            <select class="form-select" id="tipo_personal_capacitacion" name="tipo_personal_capacitacion" required>
+            <label for="id_tipo_personal_s" class="form-label">Tipo Personal a Capacitar</label>
+            <select class="form-select" id="id_tipo_personal_s" name="id_tipo_personal_s" required>
                 <option selected disabled value="">Seleccione Tipo de Personal a Capacitar</option>
                 <?php foreach ($datos_tipo_personal_capacitacion as $row){ ?>
-                <option value="<?php echo $row["id_tipo_personal_capacitacion"] ?>">
+                <option value="<?php echo $row["tipo_personal_capacitacion"] ?>">
                     <?php echo $row["tipo_personal_capacitacion"] ?></option>
                 <?php } ?>
             </select>
@@ -73,7 +73,6 @@
         </div>
         <input type="hidden" id="accion" name="accion" value="registrar">
         <input type="hidden" id="id_cliente_s" name="id_cliente_s" value="1">
-        <input type="hidden" id="id_tipo_personal_s" name="id_tipo_personal_s" value="1">
     </form>
     <br>
     <br>
@@ -83,10 +82,11 @@
     </div>
 </div>
 <script>
-    function solicitarmoCapacitacion(){
+    function solicitarCapacitacion(){
         var nombre_solicitud_capacitacion=document.getElementById("nombre_solicitud_capacitacion").value;
         var fecha_solicitud_capacitacion=document.getElementById("fecha_solicitud_capacitacion").value;
-        console.log(nombre_solicitud_capacitacion, fecha_solicitud_capacitacion)
+        var id_tipo_personal_s=document.getElementById("id_tipo_personal_s").value;
+        console.log(nombre_solicitud_capacitacion, fecha_solicitud_capacitacion,id_tipo_personal_s)
 
 
         if (nombre_solicitud_capacitacion == undefined || nombre_solicitud_capacitacion == null || nombre_solicitud_capacitacion.trim() == "") {
@@ -112,9 +112,9 @@
                 showDenyButton: false,
                 showCancelButton: false,
                 confirmButtonText: 'Ok',
-            }).then((result) => {
-                location.reload();
-            })
+                }).then((result) => {
+                    location.reload();
+                })
             /*acciones a realizar*/
         }).then((data) => {
             /*mas acciones a realizar*/

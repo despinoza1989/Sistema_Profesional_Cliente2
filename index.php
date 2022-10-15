@@ -61,25 +61,10 @@ session_start();
                     $ctrl = new ListadoVisitaClienteController();
                     break;
 
-                case 'crear-capacitacion':
-                    require_once "controllers/CrearCapacitacionController.php";
-                    $ctrl = new CrearCapacitacionController();
-                    break;
-
                 case 'solicitar-capacitacion':
                     require_once "controllers/SolicitarCapacitacionController.php";
                     $ctrl = new SolicitarCapacitacionController();
-                    break;
-                
-                case 'listar-solicitud-capacitacion':
-                    require_once "controllers/ListarSolicitudesCapacitacionesController.php";
-                    $ctrl = new ListarSolicitudesCapacitacionesController();
-                    break;
-
-                case 'listar-capacitaciones':
-                    require_once "controllers/ListarCapacitacionesController.php";
-                    $ctrl = new ListarCapacitacionesController();
-                    break;
+                    break;               
 
                 case 'crear-mejora':
                     require_once "controllers/CrearMejoraController.php";
