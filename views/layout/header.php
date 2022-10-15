@@ -12,8 +12,16 @@
                         <a class="nav-link active" aria-current="page" href="index.php?view=home">Inicio</a>
                     </li>
                 <!-- PESTAÑA DE VISITA EN TERRENO CON SUB MENUS -->
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php?view=crear-visita">Visita en Terreno</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Visita en Terreno
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index.php?view=crear-visita">Crear Visita</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listado-visita-profesional">Lista de Visita Profesional</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=listado-visita-cliente">Lista de Visita Cliente</a></li>
+
+                    </ul>
                 </li>
 
                 <!-- PESTAÑA CAPACITACIONES CON SUB MENUS -->

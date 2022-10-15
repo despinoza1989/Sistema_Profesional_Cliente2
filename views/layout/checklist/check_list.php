@@ -379,10 +379,8 @@
         </div><!-- ROW -->
 
         <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_personal_ckl" name="id_personal_ckl"
-            value="<?php echo $datosusuario['id_personal']?>">
-        <input type="hidden" id="id_cliente_ckl" name="id_cliente_ckl"
-            value="<?php echo $datos_cliente["id_cliente"]?>">
+        <input type="hidden" id="id_personal_ckl" name="id_personal_ckl" value="<?php echo $datosusuario['id_personal']?>">
+        <input type="hidden" id="id_cliente_ckl" name="id_cliente_ckl" value="<?php echo $datos_cliente["id_cliente"]?>">
         <input type="hidden" id="id_rubro_ckl" name="id_rubro_ckl" value="<?php echo $datos_cliente["id_rubro"]?>">
 
 

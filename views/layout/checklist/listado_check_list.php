@@ -10,7 +10,7 @@
                 <th>Razón Social Cliente</th>
                 <th>Fecha/Hora Check-List</th>
                 <th>Observación General</th>
-                <th>Opción</th>
+                <th>Opciones</th>
             </tr>
 
             <?php foreach ($datos as $row){ ?>
@@ -25,6 +25,7 @@
                     <td><?php echo $row["obs_check_general"]?></td>
                     <td>
                         <a href="#" class="btn btn-info btn-sm">Ver Detalle</a>
+                        <a href="#" class="btn btn-warning">Modificar</a>
                     </td>         
                 </tr>
 
