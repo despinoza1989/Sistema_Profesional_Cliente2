@@ -21,7 +21,7 @@ class VisitaController{
         $datos_cliente = $model_cliente->getAll();
         $datos_visita = $model_visita->getAll();
         $datosusuario = $_SESSION['usuario'];
-        $dato_asignacion = $model_asignacion->getAll();
+        $dato_asignacion = $model_asignacion->getAllByPersonal($datosusuario['id_personal']);
 
         if(isset($_POST["accion"])){
             $model_visita->create($_POST);            

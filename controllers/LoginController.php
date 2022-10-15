@@ -14,7 +14,7 @@ class LoginController{
 
     }
 
-    public function validar($usuario, $password){
+    /*public function validar($usuario, $password){
 
         require_once "models/AutentificacionModel.php";
 
@@ -48,7 +48,7 @@ class LoginController{
              });
             </script>';
         }
-    }
+    }*/
 
     public function validarCliente($usuario, $password){
 
