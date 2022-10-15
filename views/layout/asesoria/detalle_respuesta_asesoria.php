@@ -5,16 +5,19 @@
     <br>
     <h2> Profesional a Cargo</h2> 
     <br>
-    <form id="visualizar_respuesta_asesoria" class="row g-3 needs-validation">
-        <div class="col-md-6">
+    <form id="respuesta_asesoria" class="row g-3 needs-validation">
+        
+    <input type="hidden" id="id_respuesta_asesoria" name="id_respuesta_asesoria" value="<?php echo $datos_respuesta_asesoria['id_respuesta_asesoria'] ?>">
+
+    <div class="col-md-6">
             <label for="rut_personal" class="form-label">Rut</label>
             <input type="text" class="form-control" placeholder="" id="rut_personal" name="rut_personal" disabled required>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <label for="nombre_personal" class="form-label">Nombre</label>
             <input type="text" class="form-control" placeholder="" id="nombre_personal" name="nombre_personal" disabled required>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <label for="apellidos_personal" class="form-label">Apellidos</label>
             <input type="text" class="form-control" placeholder="" id="apellidos_personal" name="apellidos_personal" disabled required>
         </div>
@@ -39,10 +42,7 @@
             </div>
         </div>
 
-   
-        <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_personal_vt" name="id_personal_vt" value="1">
-        <input type="hidden" id="id_cliente_vt" name="id_cliente_vt" value="1"> 
+        <input type="hidden" id="id_cliente_sa" name="id_cliente_sa" value="<?php echo $datosusuariocliente['id_cliente'] ?>">
 
     </form>
     <br>
@@ -55,35 +55,34 @@
 
     (function(){
 
-    document.getElementById('id_solicitud_asesoria_ra').addEventListener('change', onChangeAsesoria)
-    document.getElementById('id_solicitud_asesoria_ra').value = document.getElementById('id_solicitud_asesoria_ra').value;
+    document.getElementById('id_respuesta_asesoria').addEventListener('change', onChangeDetalleRespuestaAsesoria)
+    document.getElementById('id_respuesta_asesoria').value = document.getElementById('id_respuesta_asesoria').value;
     
-    onChangeAsesoria({})
+    onChangeDetalleRespuestaAsesoria({})
 
     })()
 
-    function onChangeAsesoria(event){
+    function onChangeDetalleRespuestaAsesoria(event){
 
-        var id_solicitud_asesoria= document.getElementById('id_solicitud_asesoria_ra').value;
-        console.log(id_solicitud_asesoria)
+        var id_respuesta_asesoria= document.getElementById('id_respuesta_asesoria').value;
+        console.log(id_respuesta_asesoria)
 
-        if(id_solicitud_asesoria && id_solicitud_asesoria>1){
+        if(id_respuesta_asesoria && id_respuesta_asesoria>1){
 
-            fetch("api.php/solicitud-asesoria/" + id_solicitud_asesoria, {
+            fetch("api.php/respuesta-asesoria/" + id_respuesta_asesoria, {
                 method: "get"            
             }).then(response=>response.json())
             .then((datos)=>{
 
                 console.dir(datos)
 
-                document.getElementById('id_solicitud_asesoria_ra').value=datos.id_solicitud_asesoria;
-                document.getElementById('tipo_asesoria').value=datos.tipo_asesoria;
-                document.getElementById('rol_cliente').value=datos.rol_cliente;
-                document.getElementById('razon_social_cliente').value=datos.razon_social_cliente;
-                document.getElementById('telefono_cliente').value=datos.telefono_cliente;
-                document.getElementById('direccion_cliente').value=datos.direccion_cliente;
-                document.getElementById('email_cliente').value=datos.email_cliente;
-                document.getElementById('detalle_asesoria').value=datos.detalle_asesoria;
+                document.getElementById('id_respuesta_asesoria').value=datos.id_respuesta_asesoria;
+                document.getElementById('rut_personal').value=datos.rut_personal;
+                document.getElementById('nombre_personal').value=datos.nombre_personal;
+                document.getElementById('apellidos_personal').value=datos.apellidos_personal;
+                document.getElementById('telefono_personal').value=datos.telefono_personal;
+                document.getElementById('email_personal').value=datos.email_personal;
+                document.getElementById('respuesta_asesoria').value=datos.respuesta_asesoria;
 
 
             })
@@ -94,3 +93,4 @@
    
 
 </script>
+
