@@ -8,8 +8,6 @@ class SolicitarCapacitacionController{
 
         require_once "models/SolicitudCapacitacionModel.php";
         $model_solicitud_capacitacion = new SolicitudCapacitacionModel();
-        require_once "models/ClienteModel.php";
-        $model_cliente = new ClienteModel();
         require_once "models/TipoPersonalCapacitacionModel.php";
         $model_tipo_personal_capacitacion = new TipoPersonalCapacitacionModel();
 
@@ -21,7 +19,6 @@ class SolicitarCapacitacionController{
 
         
         $datosusuariocliente = $_SESSION['usuarioCliente'];
-        $datos_cliente = $model_cliente->getAll();
         $datos_tipo_personal_capacitacion = $model_tipo_personal_capacitacion->getAll();
 
         //Llamar a la vista 
