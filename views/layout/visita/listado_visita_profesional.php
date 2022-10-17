@@ -11,22 +11,23 @@
                 <th>Rut Profesional</th>
                 <th>Nombre Profesional</th>
                 <th>Apellidos Profesional</th>
+                <th>Opción</th>
             </tr>
             
             <?php foreach ($dato_asignacion as $row){ ?>
            
-           <tr>
-               <td><?php echo $row["fecha_visita"]?></td>
-               <td><?php echo $row["motivo_visita"]?></td>
-               <td><?php echo $row["rol_cliente"]?></td>
-               <td><?php echo $row["razon_social_cliente"]?></td>
-               <td><?php echo $row["rut_personal"]?></td>
-               <td><?php echo $row["nombre_personal"]?></td>
-               <td><?php echo $row["apellidos_personal"]?></td>
-               <td>
-                   <a href="#" class="btn btn-info btn-sm">Ver Detalle</a>
-               </td>         
-           </tr>
+            <tr>
+                <td><?php echo $row["fecha_visita"]?></td>
+                <td><?php echo $row["motivo_visita"]?></td>
+                <td><?php echo $row["rol_cliente"]?></td>
+                <td><?php echo $row["razon_social_cliente"]?></td>
+                <td><?php echo $row["rut_personal"]?></td>
+                <td><?php echo $row["nombre_personal"]?></td>
+                <td><?php echo $row["apellidos_personal"]?></td>
+                <td>
+                    <a href="index.php?view=detalle-visita-profesional&id_visita_terreno=<?php echo $row["id_visita_terreno"]?>" class="btn btn-info btn-sm">Ver Detalle</a>
+                </td>         
+            </tr>
 
             <?php }?>
         

@@ -75,7 +75,7 @@
         if(id_respuesta_asesoria && id_respuesta_asesoria>1){
 
             fetch("api.php/respuesta-asesoria/" + id_respuesta_asesoria, {
-                method: "get"            
+                    method: "get"            
             }).then(response=>response.json())
             .then((datos)=>{
 

@@ -46,30 +46,15 @@ session_start();
                     $ctrl = new HomeController();
                     break;
 
-                case 'crear-visita':
-                    require_once "controllers/VisitaController.php";
-                    $ctrl = new VisitaController();
-                    break;
-
                 case 'listado-visita-profesional':
                     require_once "controllers/ListadoVisitaProfesionalController.php";
                     $ctrl = new ListadoVisitaProfesionalController();
-                    break;
-
-                case 'listado-visita-cliente':
-                    require_once "controllers/ListadoVisitaClienteController.php";
-                    $ctrl = new ListadoVisitaClienteController();
                     break;
 
                 case 'solicitar-capacitacion':
                     require_once "controllers/SolicitarCapacitacionController.php";
                     $ctrl = new SolicitarCapacitacionController();
                     break;               
-
-                case 'crear-mejora':
-                    require_once "controllers/CrearMejoraController.php";
-                    $ctrl = new CrearMejoraController();
-                    break;
 
                 case 'listado-mejora':
                     require_once "controllers/ListadoMejoraController.php";
@@ -104,11 +89,6 @@ session_start();
                 case 'pago-servicio':
                     require_once "controllers/PagoController.php";
                     $ctrl = new PagoController();
-                    break;
-
-                case 'check-list':
-                    require_once "controllers/CheckListController.php";
-                    $ctrl = new CheckListController();
                     break;
 
                 case 'listado-check-list':
