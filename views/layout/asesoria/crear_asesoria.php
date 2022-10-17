@@ -56,8 +56,8 @@
         <br>
         <input type="hidden" id="accion" name="accion" value="registrar">
         
-        <input type="hidden" id="id_cliente_sa" name="id_cliente_sa" value="1">
-
+        <input type="hidden" id="id_cliente_sa" name="id_cliente_sa" value="<?php echo $datosusuariocliente['id_cliente']?>">
+    
     </form>
     <br>
     <br>

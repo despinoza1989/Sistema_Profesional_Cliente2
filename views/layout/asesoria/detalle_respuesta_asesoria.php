@@ -5,26 +5,30 @@
     <br>
     <h2> Profesional a Cargo</h2> 
     <br>
-    <form id="respuesta_asesoria" class="row g-3 needs-validation">
+    <form id="detalle_respuesta_asesoria" class="row g-3 needs-validation">
         
-    <input type="hidden" id="id_respuesta_asesoria" name="id_respuesta_asesoria" value="<?php echo $datos_respuesta_asesoria['id_respuesta_asesoria'] ?>">
+        <input type="hidden" id="id_respuesta_asesoria" name="id_respuesta_asesoria" value="<?php echo $datos_respuesta_asesoria['id_respuesta_asesoria'] ?>">
 
-    <div class="col-md-6">
+        <div class="col-md-6">
             <label for="rut_personal" class="form-label">Rut</label>
             <input type="text" class="form-control" placeholder="" id="rut_personal" name="rut_personal" disabled required>
         </div>
+
         <div class="col-md-6">
             <label for="nombre_personal" class="form-label">Nombre</label>
             <input type="text" class="form-control" placeholder="" id="nombre_personal" name="nombre_personal" disabled required>
         </div>
+
         <div class="col-md-6">
             <label for="apellidos_personal" class="form-label">Apellidos</label>
             <input type="text" class="form-control" placeholder="" id="apellidos_personal" name="apellidos_personal" disabled required>
         </div>
+
         <div class="col-md-6">
             <label for="telefono_personal" class="form-label">Teléfono</label>
             <input type="text" class="form-control" placeholder="" id="telefono_personal" name="telefono_personal" disabled required>
         </div>
+
         <div class="col-md-6">
             <label for="email_personal" class="form-label">Email</label>
             <div class="input-group mb-3"> 
@@ -32,11 +36,12 @@
                 <input type="text" class="form-control" placeholder="" id="email_personal" name="email_personal" disabled required>
             </div>
         </div>
+
         <br>
         <br>
        
         <div class="col-md-12">
-            <label for="respuesta_asesoria" class="form-label">Detalle de la Asesoría</label>
+            <label for="respuesta_asesoria" class="form-label">Detalle de Respuesta del Profesional</label>
             <textarea type="text" class="form-control" rows="10" cols="40" id="respuesta_asesoria" name="respuesta_asesoria" disabled></textarea>
             <div class="invalid-feedback">
             </div>
@@ -90,6 +95,7 @@
         }
 
     }
+
    
 
 </script>

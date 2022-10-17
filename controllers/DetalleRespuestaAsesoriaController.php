@@ -9,7 +9,7 @@ class DetalleRespuestaAsesoriaController{
 
    //         $id_respuesta_asesoria = $_GET['id_respuesta_asesoria'];
 
-//        }
+   //     }
 
         //Lo primero es llamar el modelo
 

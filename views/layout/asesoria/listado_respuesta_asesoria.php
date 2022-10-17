@@ -1,3 +1,5 @@
+
+<br><br><br>
 <div class="card" style="margin: 1px 5em;">
         <h3 align="center" >Listado de Respuestas Asesorias</h3>
         <table class="table table-sm">
@@ -6,7 +8,7 @@
                 <th>Rut Profesional </th>
                 <th>Nombre Profesional </th>
                 <th>Apellido Profesional</th>
-
+                <th>Opciones</th>
             </tr>
 
             <?php foreach ($datos_personal as $row){ ?> 
@@ -16,10 +18,7 @@
                     <td><?php echo $row["rut_personal"]?></td>
                     <td><?php echo $row["nombre_personal"]?></td>
                     <td><?php echo $row["apellidos_personal"]?></td>                   
-                    <td>
-                                             
-
-                    </td>
+             
                     <td>
                         <a href="index.php?view=detalle-respuesta-asesoria" class="btn btn-info btn-sm">Ver Respuesta</a>                        
                     </td>         
