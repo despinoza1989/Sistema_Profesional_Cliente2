@@ -17,10 +17,7 @@
                     Visita en Terreno
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?view=crear-visita">Crear Visita</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listado-visita-profesional">Lista de Visita Profesional</a></li>
-                        <li><a class="dropdown-item" href="index.php?view=listado-visita-cliente">Lista de Visita Cliente</a></li>
-
                     </ul>
                 </li>
 
@@ -40,7 +37,6 @@
                         Mejoras
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?view=crear-mejora">Crear Mejoras</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listado-mejora">Lista de Mejoras</a></li>
                     </ul>
                 </li>
@@ -75,7 +71,6 @@
                         Check-List
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?view=check-list">Generar Check-List</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listado-check-list">Listado Check-List</a></li>
                     </ul>
                 </li>
