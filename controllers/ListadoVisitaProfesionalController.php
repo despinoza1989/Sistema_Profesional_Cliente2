@@ -13,14 +13,13 @@ class ListadoVisitaProfesionalController{
         $model_asignacion = new AsignacionProfesionalModel();
         require_once "models/PersonalModel.php";
         $model_personal = new PersonalModel();
-
-
+        
 
         //Llamar datos del modelo
 
         $datos_visita = $model_visita_terreno->getAll();
-        $datosusuariocliente = $_SESSION['usuarioCliente'];
-        $dato_asignacion = $model_asignacion->getAllByVisitaCliente($datosusuariocliente['id_cliente']);
+        $datosusuario = $_SESSION['usuarioCliente'];
+        $dato_asignacion = $model_asignacion->getAllByVisitaCliente($datosusuario['id_cliente']);
         
         
 
