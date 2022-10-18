@@ -48,13 +48,14 @@ class RespuestaAsesoriaModel {
 
         $conexion= Database::connect();
         $query = "SELECT ra.id_respuesta_asesoria, ra.respuesta_asesoria, ra.id_solicitud_asesoria_ra, ra.id_personal_sa,
-        sa.detalle_asesoria, sa.id_tipo_asesoria_sa, sa.id_cliente_sa, p.rut_personal, p.telefono_personal, p.nombre_personal, 
-        p.apellidos_personal, p.email_personal, p.direccion_personal, p.fecha_nacimiento_p, p.usuario_personal, p.estado_usuario_personal,
-        p.estado_usuario_personal, p.id_tipo_usuario_p, p.id_estado_civil, p.id_genero
+        sa.detalle_asesoria, sa.id_tipo_asesoria_sa, sa.id_cliente_sa, 
+        p.rut_personal, p.nombre_personal, p.apellidos_personal, ta.tipo_asesoria
         FROM respuesta_asesoria AS ra
         LEFT JOIN solicitud_asesoria AS sa ON sa.id_solicitud_asesoria = ra.id_solicitud_asesoria_ra
-        LEFT JOIN tipo_asesoria AS ta ON ta.tipo_asesoria = sa.id_tipo_asesoria_sa
-        LEFT JOIN personal AS p ON p.id_personal = ra.id_personal_sa WHERE sa.id_cliente_sa  = '". $id_cliente ."'";
+        LEFT JOIN cliente AS c ON c.id_cliente = sa.id_cliente_sa
+        LEFT JOIN tipo_asesoria AS ta ON sa.id_tipo_asesoria_sa = ta.id_tipo_asesoria
+        LEFT JOIN personal AS p ON p.id_personal = ra.id_personal_sa
+        WHERE sa.id_cliente_sa = '". $id_cliente ."'"; 
         $result = $conexion->query($query);
         $response = array();
         while($row = mysqli_fetch_assoc($result)) {
@@ -66,7 +67,7 @@ class RespuestaAsesoriaModel {
         return $response;
     }
 
-
+    
 
     function create($data) {
 
