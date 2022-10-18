@@ -6,18 +6,17 @@ class ListadoRespuestaAsesoriaController{
 
         //Lo primero es llamar el modelo
 
-        require_once "models/PersonalModel.php";
-        $model_personal = new PersonalModel();
+        require_once "models/RespuestaAsesoriaModel.php";
+        $model_respuesta = new RespuestaAsesoriaModel();
 
-        require_once "models/TipoAsesoriaModel.php";
-        $model_tipo_asesoria = new TipoAsesoriaModel();
+ 
        
 
         //Llamar datos del modelo
 
         //$datos_respuesta_asesoria = $model_respuesta_asesoria->getAll();
-        $datos_personal = $model_personal->getAll();
-        $datos_tipo_asesoria = $model_tipo_asesoria->getAll(); 
+        $datosusuariocliente = $_SESSION['usuarioCliente'];
+        $datos_respuesta =  $model_respuesta->getAllByCliente($datosusuariocliente['id_cliente']);
 
         //Llamar a la vista 
         require_once "views/layout/header.php";

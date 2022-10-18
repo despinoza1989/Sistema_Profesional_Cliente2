@@ -1,5 +1,4 @@
- <!-- BARRA DE MENUS LATERAL-->
- <div class="card-body" style="margin: 2em 5em;">
+<div class="card-body" style="margin: 2em 5em;">
     <h1> Detalle Respuesta Asesoria</h1>
     <br>
     <br>

@@ -11,7 +11,7 @@
                 <th>Opciones</th>
             </tr>
 
-            <?php foreach ($datos_personal as $row){ ?> 
+            <?php foreach ($datos_respuesta as $row){ ?> 
            
                 <tr>
                     <td><?php echo $row["tipo_asesoria"]?></td>
@@ -20,7 +20,7 @@
                     <td><?php echo $row["apellidos_personal"]?></td>                   
              
                     <td>
-                        <a href="index.php?view=detalle-respuesta-asesoria" class="btn btn-info btn-sm">Ver Respuesta</a>                        
+                        <a href="index.php?view=detalle-respuesta-asesoria&id_respuesta_asesoria=<?php echo $row["id_respuesta_asesoria"]?>" class="btn btn-info btn-sm">Ver Respuesta</a>                        
                     </td>         
                 </tr>
 
