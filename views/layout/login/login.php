@@ -32,7 +32,7 @@
                             ?>
                             <br>
                             <p class="p_login">Sistema de Asesorias en Prevención</p>
-                            <p class="p_login">Profesional - Cliente</p>
+                            <p class="p_login">Cliente</p>
                             <div>
                                 <div class="logo">
                                     <img src="assents/img/Logo Empresa 2.png" alt="logo">

@@ -10,7 +10,7 @@
                 <th>Dirección</th>
                 <th>Fecha Accidente</th>
                 <th>Cantidad de Personas</th>
-                <th>Opción</th>
+
             </tr>
 
             <?php foreach ($datos as $row){ ?>
@@ -23,9 +23,7 @@
                     <td><?php echo $row["direccion_cliente"]?></td>
                     <td><?php echo $row["fecha_accidente"]?></td>
                     <td><?php echo $row["cantidad_personas"]?></td>
-                    <td>
-                        <a href="{% url 'modificar_usuario' u.id %}" class="btn btn-info btn-sm">Ver Detalle</a>
-                    </td>         
+
                 </tr>
 
             <?php }?>
