@@ -11,8 +11,10 @@ class ListadoMejoraController{
     
 
         //Llamar datos del modelo
+        
+        $datosusuario = $_SESSION['usuarioCliente'];
+        $datos_mejora = $model_mejoras->getByListadoCliente($datosusuario['id_cliente']);
 
-        $datos_mejora = $model_mejoras->getByListado();
 
         //Llamar a la vista 
         require_once "views/layout/header.php";

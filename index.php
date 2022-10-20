@@ -51,6 +51,11 @@ session_start();
                     $ctrl = new ListadoVisitaProfesionalController();
                     break;
 
+                case 'detalle-visita-profesional':
+                    require_once "controllers/DetalleVisitaProfesionalController.php";
+                    $ctrl = new DetalleVisitaProfesionalController();
+                    break;
+
                 case 'solicitar-capacitacion':
                     require_once "controllers/SolicitarCapacitacionController.php";
                     $ctrl = new SolicitarCapacitacionController();
@@ -59,6 +64,11 @@ session_start();
                 case 'listado-mejora':
                     require_once "controllers/ListadoMejoraController.php";
                     $ctrl = new ListadoMejoraController();
+                    break;
+
+                case 'detalle-mejora':
+                    require_once "controllers/DetalleMejorasController.php";
+                    $ctrl = new DetalleMejorasController();
                     break;
 
                 case 'crear-asesoria':
