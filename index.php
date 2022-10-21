@@ -59,7 +59,14 @@ session_start();
                 case 'solicitar-capacitacion':
                     require_once "controllers/SolicitarCapacitacionController.php";
                     $ctrl = new SolicitarCapacitacionController();
-                    break;               
+                    break;       
+                    
+                case 'listar-solicitud-capacitacion':
+                    require_once "controllers/ListarSolicitudesCapacitacionesController.php";
+                    $ctrl = new ListarSolicitudesCapacitacionesController();
+                    break;    
+
+
 
                 case 'listado-mejora':
                     require_once "controllers/ListadoMejoraController.php";
