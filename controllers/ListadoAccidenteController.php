@@ -12,8 +12,8 @@ class ListadoAccidenteController{
         //Llamar datos del modelo
         
         $datosusuariocliente = $_SESSION['usuarioCliente'];
-        $datos = $model->getAll(); 
-        //$datos = $model->getByIdCliente($datosusuariocliente['id_cliente']); 
+        //$datos = $model->getAll(); 
+        $datos = $model->getByIdCliente($datosusuariocliente['id_cliente']); 
         
         //Llamar a la vista 
         require_once "views/layout/header.php";

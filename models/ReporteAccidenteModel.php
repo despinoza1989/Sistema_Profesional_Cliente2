@@ -52,7 +52,10 @@ class ReporteAccidenteModel {
         LEFT JOIN cliente AS c ON c.id_cliente = ra.id_cliente_ra WHERE ra.id_cliente_ra  = '". $id_cliente ."'"; 
         $result = $conexion->query($query);
         $response = array();
-        while($row = mysqli_fetch_assoc($result)) { $response = $row; }
+        while($row = mysqli_fetch_assoc($result)) { 
+            
+            $response[] = $row; 
+        }
         $result->close();
         $conexion->close();
         return $response;
