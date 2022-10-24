@@ -174,7 +174,7 @@ function onChangeDetalleMejoras(event) {
     var id_mejoras = document.getElementById('id_mejoras').value;
 
 
-    if (id_mejoras && id_mejoras > 1) {
+    if (id_mejoras && id_mejoras > 0) {
 
         fetch("api.php/mejoras/" + id_mejoras, {
                 method: "get"
