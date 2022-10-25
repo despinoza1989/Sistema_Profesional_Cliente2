@@ -69,17 +69,17 @@
     function onChangeDetalleRespuestaAsesoria(event){
 
         var id_respuesta_asesoria= document.getElementById('id_respuesta_asesoria').value;
-        console.log(id_respuesta_asesoria)
+        console.log(id_respuesta_asesoria, "ID Respueta")
 
-        if(id_respuesta_asesoria && id_respuesta_asesoria>1){
+        if(id_respuesta_asesoria && id_respuesta_asesoria>0){
 
             fetch("api.php/respuesta-asesoria/" + id_respuesta_asesoria, {
                     method: "get"            
             }).then(response=>response.json())
             .then((datos)=>{
 
-                console.dir(datos)
-
+                console.log(datos)
+                
                 document.getElementById('id_respuesta_asesoria').value=datos.id_respuesta_asesoria;
                 document.getElementById('rut_personal').value=datos.rut_personal;
                 document.getElementById('nombre_personal').value=datos.nombre_personal;
