@@ -10,7 +10,6 @@
                 <th>Razón Social Cliente</th>
                 <th>Rut Profesional</th>
                 <th>Nombre Profesional</th>
-                <th>Apellidos Profesional</th>
                 <th>Opción</th>
             </tr>
             
@@ -22,8 +21,7 @@
                 <td><?php echo $row["rol_cliente"]?></td>
                 <td><?php echo $row["razon_social_cliente"]?></td>
                 <td><?php echo $row["rut_personal"]?></td>
-                <td><?php echo $row["nombre_personal"]?></td>
-                <td><?php echo $row["apellidos_personal"]?></td>
+                <td><?php echo $row["nombre_personal"]?> <?php echo $row["apellidos_personal"]?></td>
                 <td>
                     <a href="index.php?view=detalle-visita-profesional&id_visita_terreno=<?php echo $row["id_visita_terreno"]?>" class="btn btn-info btn-sm">Ver Detalle</a>
                 </td>         
