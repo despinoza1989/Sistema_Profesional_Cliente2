@@ -27,7 +27,7 @@
                     Capacitación
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?view=solicitar-capacitacion">Solicitud Capacitacion</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=solicitar-capacitacion">Solicitud de Capacitación</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listar-solicitud-capacitacion">Lista de Solicitudes de Capacitaciones</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listar-respuesta-capacitacion">Lista de Capacitaciones</a></li>
                     </ul>
