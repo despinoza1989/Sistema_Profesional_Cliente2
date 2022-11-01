@@ -3,12 +3,12 @@
         <h3 align="center" >Listado de Solicitudes de Capacitaciones</h3>
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
-                <th>Nombre Solicitud Capacitacion</th>
-                <th>Fecha Solicitud Capacitacion</th>
+                <th>Nombre Solicitud Capacitación</th>
+                <th>Fecha Solicitud Capacitación</th>
                 <th>Rol Cliente</th>
-                <th>Razon Social</th>
-                <th>telefono Cliente</th>
-                <th>Direccion Cliente</th>
+                <th>Razón Social</th>
+                <th>Teléfono Cliente</th>
+                <th>Dirección Cliente</th>
                 <th>Tipo Personal a Capacitar</th>
             </tr>
 
