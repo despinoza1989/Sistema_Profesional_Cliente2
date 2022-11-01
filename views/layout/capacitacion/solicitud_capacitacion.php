@@ -1,5 +1,5 @@
 <div class="card-body" style="margin: 2em 5em;">
-    <h1> Solicitar Capacitacion </h1>
+    <h1> Solicitar Capacitación </h1>
     <br>
     <br>
     <form id="solicitar-capacitacion" class="row g-3 needs-validation">
@@ -8,17 +8,12 @@
         <div class="col-md-4">
             <label for="nombre_solicitud_capacitacion" class="form-label">Nombre Capacitación</label>
             <input type="text" class="form-control" id="nombre_solicitud_capacitacion"
-                name="nombre_solicitud_capacitacion" required>
-            <div class="invalid-feedback">
-            </div>
+                name="nombre_solicitud_capacitacion" placeholder="Ingrese un Nombre de Capacitación, Ejemplo: Uso Correcto de EPP " required>
         </div>
         <div class="col-md-4">
             <label for="fecha_solicitud_capacitacion" class="form-label">Fecha a Solicitar Capacitación</label>
             <input type="date" class="form-control" id="fecha_solicitud_capacitacion"
                 name="fecha_solicitud_capacitacion" required>
-            <div class="invalid-feedback">
-                Favor de introducir una fecha valida
-            </div>
         </div>
         <div class="col-md-4">
             <label for="id_tipo_personal_s" class="form-label">Tipo Personal a Capacitar</label>
@@ -56,7 +51,7 @@
         </div>
 
         <div class="col-md-3">
-            <label for="telefono_cliente" class="form-label">Telefono</label>
+            <label for="telefono_cliente" class="form-label">Teléfono</label>
             <input type="text" class="form-control" id="telefono_cliente" name="telefono_cliente"
                 value="<?php echo $datosusuariocliente['telefono_cliente'] ?>" disabled required>
             <div class="invalid-feedback">
