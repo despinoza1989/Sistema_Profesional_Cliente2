@@ -4,7 +4,7 @@
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
                 <th>Nombre Capacitacion</th>
-                <th>Fecha de Realización de Capacitacion</th>
+                <th>Fecha de Realización de Capacitación</th>
                 <th>Nombre Profesional</th>
                 <th>Apellido Profesional</th>
                 <th>Email Profesional</th>
