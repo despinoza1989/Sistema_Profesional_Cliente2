@@ -47,7 +47,7 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Se deben ingresar solo números',                
+                text: 'Se deben ingresar solo números en la cantidad de personas involucradas.',                
                 })            
             return;
 
@@ -57,7 +57,7 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Se debe ingresar una fecha valida',                
+                text: 'Se debe ingresar la fecha ocurrido el accidente',                
                 })            
             return;
 
