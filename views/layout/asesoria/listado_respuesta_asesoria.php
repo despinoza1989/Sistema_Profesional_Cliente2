@@ -1,12 +1,12 @@
 
 <br><br><br>
 <div class="card" style="margin: 1px 5em;">
-        <h3 align="center" >Listado de Respuestas Asesorias</h3>
+        <h3 align="center" >Listado de Respuestas Asesorías</h3>
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
                 <th>Tipo Asesoría</th>
                 <th>Respuesta De Solicitud Asesoría</th>
-                <th>Nombre Profesional que entrega respuesta</th>
+                <th>Nombre Profesional Que Entrega Respuesta</th>
                 <th>Rut</th>
                 <th>Opción</th>
             </tr>

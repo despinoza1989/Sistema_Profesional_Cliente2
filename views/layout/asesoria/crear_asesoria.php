@@ -48,7 +48,7 @@
 
         <div class="col-md-12">
             <label for="detalle_asesoria" class="form-label">Descripción Asesoría</label>
-            <textarea type="text" class="form-control" rows="10" cols="40" id="detalle_asesoria" name="detalle_asesoria" placeholder="Favor de ingresar el motivo de la asesoria..."></textarea>
+            <textarea type="text" class="form-control" rows="10" cols="40" id="detalle_asesoria" name="detalle_asesoria" placeholder="Favor de ingresar el motivo de la asesoría..."></textarea>
             <div class="invalid-feedback">
             </div>
         </div>

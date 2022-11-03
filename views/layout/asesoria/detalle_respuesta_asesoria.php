@@ -1,5 +1,5 @@
 <div class="card-body" style="margin: 2em 5em;">
-    <h1> Detalle Respuesta Asesoria</h1>
+    <h1> Detalle Respuesta Asesoría</h1>
     <br>
     <br>
     <h2> Profesional a Cargo</h2>
