@@ -70,9 +70,21 @@
 <script>
     function crearAsesoria(){
         var detalle_asesoria=document.getElementById("detalle_asesoria").value;
+        var id_tipo_asesoria_sa=document.getElementById("id_tipo_asesoria_sa").value;
         console.log( detalle_asesoria)
 
       
+
+        if(id_tipo_asesoria_sa==undefined || id_tipo_asesoria_sa==null || id_tipo_asesoria_sa.trim()=="" ){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Se debe seleccionar el tipo de Asesoría',                
+                })            
+            return;
+
+        }
+
         if(detalle_asesoria==undefined || detalle_asesoria==null || detalle_asesoria.trim()=="" ){
             Swal.fire({
                 icon: 'error',
