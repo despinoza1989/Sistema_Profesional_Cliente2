@@ -77,7 +77,7 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Se debe de completar el campo',                
+                text: 'Se debe de completar el campo Descripción Asesoría',                
                 })            
             return;
 
