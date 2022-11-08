@@ -114,6 +114,26 @@ function solicitarCapacitacion() {
 
     }
 
+    var fecha = new Date(fecha_solicitud_capacitacion);
+    var ahora = new Date();
+    var dias_milisegundos = fecha.getTime() - ahora.getTime();
+    var dias_diferencia = dias_milisegundos/(1000*60*60*24)
+
+    console.log(ahora, 'Fecha Ahora')
+    console.log(fecha_solicitud_capacitacion, 'check')
+    console.log(dias_milisegundos, 'diferencia milisegundos')
+    console.log(dias_diferencia, 'diferencia dias')
+
+    if(dias_diferencia<2){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'La Fecha a solicitar la capacitación debe con al menos 2 días de anticipación',                
+            })            
+        return;
+    }
+
+
     if (id_tipo_personal_s == undefined || id_tipo_personal_s == null || id_tipo_personal_s.trim() == "") {
         Swal.fire({
             icon: 'error',
@@ -123,7 +143,6 @@ function solicitarCapacitacion() {
         return;
 
     }
-
 
 
     let formulario = new FormData(document.getElementById("solicitar-capacitacion"))
