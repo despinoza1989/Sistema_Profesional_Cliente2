@@ -8,10 +8,13 @@ class ListadoCheckListController{
 
         require_once "models/ChecklistModel.php";
         $model = new ChecklistModel();
-
+        
+        
         //Llamar datos del modelo
         
-        $datos = $model->getAll(); 
+        $datos_check = $model->getAll();
+        $datosusuario = $_SESSION['usuarioCliente'];
+        $dato_asignacion = $model->getBylistadoCliente($datosusuario['id_cliente']); 
 
         //Llamar a la vista 
         require_once "views/layout/header.php";

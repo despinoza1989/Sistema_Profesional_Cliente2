@@ -26,7 +26,7 @@ require "models/TipoPersonalCapacitacionModel.php";
 require "models/TipoUsuarioModel.php";
 require "models/VisitaTerrenoModel.php";
 require "models/AsignacionProfesionalModel.php";
-
+require "models/DetalleChecklistModel.php";
 
 $configuration = [
     'settings' => [
@@ -114,11 +114,18 @@ $app->get('/check-list/{id_check_list}', function (Request $request, Response $r
 
 });
 
-$app->post('/check-list/crear', function (Request $request, Response $response, array $args){
-
+$app->post('/check-list', function (Request $request, Response $response, array $args) {
+        
     $model = new ChecklistModel();
-    $model_detalle = new DetalleChecklistModel();
-    $datos = $model->getById($id_check_list);
+    $model2 = new DetalleChecklistModel();
+    $data_post = $request->getParsedBody();
+    $datos = $model->create($data_post['check_list']);
+
+    $detalles_checklist = $data_post['detalle_check_list'];
+    foreach($detalles_checklist as $detalle){
+        $detalle['id_check_list_dcl']=$datos['id'];
+        $model2->create($detalle);
+    }
     return $response->withJson($datos);
 
 });
