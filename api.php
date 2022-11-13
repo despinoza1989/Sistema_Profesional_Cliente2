@@ -115,6 +115,15 @@ $app->get('/check-list/{id_check_list}', function (Request $request, Response $r
 
 });
 
+$app->get('/detalle-check-list/id-check-list/{id_check_list_dcl}', function (Request $request, Response $response, array $args) {
+    
+    $id_check_list_dcl = $args['id_check_list_dcl'];    
+    $model = new DetalleChecklistModel();
+    $datos = $model->getByIdChecklist($id_check_list_dcl);
+    return $response->withJson($datos);
+
+});
+
 $app->post('/check-list', function (Request $request, Response $response, array $args) {
         
     $model = new ChecklistModel();
@@ -130,6 +139,7 @@ $app->post('/check-list', function (Request $request, Response $response, array 
     return $response->withJson($datos);
 
 });
+
 
 
 //MODELS CREAR CAPACITACIÓN

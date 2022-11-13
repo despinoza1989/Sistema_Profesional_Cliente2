@@ -6,7 +6,8 @@
     <br>
     <form id="registro_check" class="row g-3 needs-validation">
 
-        <input type="hidden" id="id_check_list" name="id_check_list" value="<?php echo $datos_check_list['id_check_list']?>">
+        <input type="hidden" id="id_check_list" name="id_check_list" value="<?php echo $datos_check_list['id_check_list'] ?>">
+        
 
         <div class="container">
             <div class="row">
@@ -14,29 +15,28 @@
 
                 <div class="col-md-6">
                     <label for="rut_personal" class="form-label">Rut</label>
-                    <input type="text" class="form-control" id="rut_personal" name="rut_personal"
-                         disabled required>
+                    <input type="text" class="form-control" id="rut_personal" name="rut_personal" disabled required>
                 </div>
                 <div class="col-md-3">
                     <label for="nombre_personal" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre_personal" name="nombre_personal"
-                         disabled required>
+                    <input type="text" class="form-control" id="nombre_personal" name="nombre_personal" disabled
+                        required>
                     <div class="valid-feedback">
                         Favor de introducir un nombre Valido
                     </div>
                 </div>
                 <div class="col-md-3">
                     <label for="apellidos_personal" class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" id="apellidos_personal" name="apellidos_personal"
-                         disabled required>
+                    <input type="text" class="form-control" id="apellidos_personal" name="apellidos_personal" disabled
+                        required>
                     <div class="valid-feedback">
                         Favor de introducir un apellido Valido
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="telefono_personal" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="telefono_personal" name="telefono_personal"
-                         disabled required>
+                    <input type="text" class="form-control" id="telefono_personal" name="telefono_personal" disabled
+                        required>
                     <div class="invalid-feedback">
                         Favor de introducir un telefono valido
                     </div>
@@ -44,7 +44,7 @@
                 <div class="col-md-6">
                     <label for="email_personal" class="form-label">Correo</label>
                     <input type="text" class="form-control" id="email_personal" name="email_personal"
-                        change="onChangeRol"  disabled required>
+                        change="onChangeRol" disabled required>
                     <div class="invalid-feedback">
                         Favor de introducir un correo Valido
                     </div>
@@ -58,8 +58,7 @@
 
                 <div class="col-md-6">
                     <label for="rol_cliente" class="form-label">Rol</label>
-                    <input class="form-control" id="rol_cliente" name="rol_cliente"
-                         disabled required>
+                    <input class="form-control" id="rol_cliente" name="rol_cliente" disabled required>
                     <div class="invalid-feedback">
                     </div>
                 </div>
@@ -117,8 +116,7 @@
                 <!-- COL 2 -->
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="senaleticas" name="senaleticas" disabled
-                        required>
+                    <input class="form-check-input" type="checkbox" id="senaleticas" name="senaleticas"  disabled required>
                     <label class="form-check-label" for="senaleticas">
                         Señaleticas
                     </label>
@@ -388,10 +386,6 @@
 
         </div><!-- ROW -->
 
-        <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="id_cliente_ckl" name="id_cliente_ckl" value="<?php echo $datosusuario['usuarioCliente']?>">
-
-
     </form>
     <br>
     <br>
@@ -403,14 +397,16 @@
 <script>
 (function() {
 
-    document.getElementById('id_check_list').addEventListener('change', onChangeDetallecheckList)
+    document.getElementById('id_check_list').addEventListener('change', onChangeCheckList)
     document.getElementById('id_check_list').value = document.getElementById('id_check_list').value;
 
-    onChangeDetallecheckList({})
+    onChangeCheckList({})
+    getDetallecheckList()
+    
 
 })()
 
-function onChangeDetallecheckList(event) {
+function onChangeCheckList(event) {
 
     var id_check_list = document.getElementById('id_check_list').value;
     console.log(id_check_list)
@@ -424,7 +420,6 @@ function onChangeDetallecheckList(event) {
 
                 console.dir(datos)
                 document.getElementById('rut_personal').value = datos.rut_personal;
-                document.getElementById('rut_personal').value = datos.rut_personal;
                 document.getElementById('nombre_personal').value = datos.nombre_personal;
                 document.getElementById('apellidos_personal').value = datos.apellidos_personal;
                 document.getElementById('telefono_personal').value = datos.telefono_personal;
@@ -437,19 +432,42 @@ function onChangeDetallecheckList(event) {
                 document.getElementById('email_cliente').value = datos.email_cliente;
 
                 document.getElementById('fecha_check_list').value = datos.fecha_check_list;
-                document.getElementById('senaleticas').checked = datos.valor_item;
-                document.getElementById('estado_contratos').checked = datos.valor_item;
-                document.getElementById('estado_extintores').checked = datos.valor_item;
-                document.getElementById('instalaciones_electricas').checked = datos.valor_item;
-                document.getElementById('instalaciones_sanitarias').checked = datos.valor_item;
-
                 document.getElementById('obs_check_general').value = datos.obs_check_general;
-        
+                document.getElementById('obs_check_proteccion').value = datos.obs_check_proteccion;
+                document.getElementById('obs_check_herramientas').value = datos.obs_check_herramientas;
+                document.getElementById('obs_check_maquinaria').value = datos.obs_check_maquinaria;
+
 
 
             })
 
     }
+
+}
+
+
+function getDetallecheckList() {
+
+var id_check_list = document.getElementById('id_check_list').value;
+console.log(id_check_list)
+console.log('getDetallecheckList')
+
+if (id_check_list && id_check_list > 0) {
+
+    fetch("api.php/detalle-check-list/id-check-list/" + id_check_list, {
+            method: "get"
+        }).then(response => response.json())
+        .then((datos) => {
+
+            console.dir(datos)
+            
+            for (const key in datos) {
+                document.getElementById(datos[key].nombre_item).checked=(datos[key].valor_item==1);
+            }
+
+        })
+
+}
 
 }
 </script>
