@@ -49,7 +49,7 @@
                         Asesorías
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?view=crear-asesoria">Solicitar Asesoría</a></li>
+                        <li><a class="dropdown-item" href="index.php?view=solicitar-asesoria">Solicitar Asesoría</a></li>
                         <li><a class="dropdown-item" href="index.php?view=listar-respuesta-asesoria">Listar Respuesta de Asesorías</a></li>
 
                     </ul>

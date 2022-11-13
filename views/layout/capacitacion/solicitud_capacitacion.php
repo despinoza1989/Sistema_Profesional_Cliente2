@@ -2,7 +2,7 @@
     <h1> Solicitar Capacitación </h1>
     <br>
     <br>
-    <form id="solicitar-capacitacion" class="row g-3 needs-validation">
+    <form id="solicitar_capacitacion" class="row g-3 needs-validation">
         <h2>Datos Solicitud Capacitación </h2>
         <br>
         <div class="col-md-4">
@@ -85,83 +85,150 @@
     </div>
 </div>
 <script>
-function solicitarCapacitacion() {
-    var nombre_solicitud_capacitacion = document.getElementById("nombre_solicitud_capacitacion").value;
-    var fecha_solicitud_capacitacion = document.getElementById("fecha_solicitud_capacitacion").value;
-    var id_tipo_personal_s = document.getElementById("id_tipo_personal_s").value;
-    console.log(nombre_solicitud_capacitacion, fecha_solicitud_capacitacion, id_tipo_personal_s)
+    function solicitarCapacitacion() {
+        var nombre_solicitud_capacitacion = document.getElementById("nombre_solicitud_capacitacion").value;
+        var fecha_solicitud_capacitacion = document.getElementById("fecha_solicitud_capacitacion").value;
+        var id_tipo_personal_s = document.getElementById("id_tipo_personal_s").value;
+        console.log(nombre_solicitud_capacitacion, fecha_solicitud_capacitacion, id_tipo_personal_s)
 
 
-    if (nombre_solicitud_capacitacion == undefined || nombre_solicitud_capacitacion == null ||
-        nombre_solicitud_capacitacion.trim() == "") {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Se debe ingresar el nombre de la solicitud de la capacitación',
+        if (nombre_solicitud_capacitacion == undefined || nombre_solicitud_capacitacion == null ||
+            nombre_solicitud_capacitacion.trim() == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Se debe ingresar el nombre de la solicitud de la capacitación',
+            })
+            return;
+
+        }
+
+        if (fecha_solicitud_capacitacion == undefined || fecha_solicitud_capacitacion == null ||
+            fecha_solicitud_capacitacion.trim() == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Se debe ingresar una fecha valida',
+            })
+            return;
+
+        }
+
+        var fecha = new Date(fecha_solicitud_capacitacion);
+        var ahora = new Date();
+        var dias_milisegundos = fecha.getTime() - ahora.getTime();
+        var dias_diferencia = dias_milisegundos/(1000*60*60*24)
+
+        console.log(ahora, 'Fecha Ahora')
+        console.log(fecha_solicitud_capacitacion, 'check')
+        console.log(dias_milisegundos, 'diferencia milisegundos')
+        console.log(dias_diferencia, 'diferencia dias')
+
+        if(dias_diferencia<2){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'La Fecha a solicitar la capacitación debe con al menos 2 días de anticipación',                
+                })            
+            return;
+        }
+
+
+        if (id_tipo_personal_s == undefined || id_tipo_personal_s == null || id_tipo_personal_s.trim() == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Se debe ingresar el tipo personal a capacitar',
+            })
+            return;
+
+        }
+
+
+        let formulario = new FormData(document.getElementById("solicitar_capacitacion"))
+        fetch('index.php?view=solicitar-capacitacion', {
+            method: "post",
+            body: formulario
+        }).then((response) => {
+
+            Swal.fire({
+                title: 'Solicitud creada exitosamente',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'Ok',
+            }).then((result) => {
+                location.reload();
+            })
+
+            //Mensaje Profesional
+            var id_cliente= document.getElementById('id_cliente_s').value;
+
+            if(id_cliente && id_cliente>0){
+
+                fetch("api.php/asignacion-profesional-cliente/" + id_cliente, {
+                    method: "get"            
+                }).then(response=>response.json())
+                .then((datos)=>{
+
+                    console.dir(datos, "Datos Profesional")
+                    
+                    for (const key in datos) {
+
+                    crearNotificacion("El Cliente a solicitado una capacitación", 0, 0, datos[key].id_personal_ap, 0, "solicitar_capacitacion")
+
+                    }
+
+                })
+
+            }
+
+            //Mensaje Administrativo
+            fetch("api.php/personal_administrativo", {
+                method: "get"
+            }).then(response => response.json())
+            .then((datos) => {
+
+                console.dir(datos)
+                
+                for (const key in datos) {
+
+                    crearNotificacion("Un Cliente a solicitado una capacitación", 0, 0, datos[key].id_personal, 0, "solicitar_capacitacion")
+
+                }
+
+            })           
+            /*acciones a realizar*/
+        }).then((data) => {
+            /*mas acciones a realizar*/
         })
-        return;
-
     }
 
-    if (fecha_solicitud_capacitacion == undefined || fecha_solicitud_capacitacion == null ||
-        fecha_solicitud_capacitacion.trim() == "") {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Se debe ingresar una fecha valida',
-        })
-        return;
+    function crearNotificacion(mensaje_notificacion, estado_notificacion, is_cliente, custom_user_id, custom_option_id, tipo_notificacion){
+        
+        var request = {
 
+            mensaje_notificacion: mensaje_notificacion,
+            estado_notificacion: estado_notificacion,
+            is_cliente: is_cliente,
+            custom_user_id: custom_user_id,
+            custom_option_id: custom_option_id,
+            tipo_notificacion: tipo_notificacion
+
+        }
+
+        fetch('api.php/notificaciones', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(request)
+        }).then((response) => {
+            
+            console.log(response)
+            /*acciones a realizar*/     
+        }).then((data) => {
+            /*mas acciones a realizar*/
+        })
     }
 
-    var fecha = new Date(fecha_solicitud_capacitacion);
-    var ahora = new Date();
-    var dias_milisegundos = fecha.getTime() - ahora.getTime();
-    var dias_diferencia = dias_milisegundos/(1000*60*60*24)
-
-    console.log(ahora, 'Fecha Ahora')
-    console.log(fecha_solicitud_capacitacion, 'check')
-    console.log(dias_milisegundos, 'diferencia milisegundos')
-    console.log(dias_diferencia, 'diferencia dias')
-
-    if(dias_diferencia<2){
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'La Fecha a solicitar la capacitación debe con al menos 2 días de anticipación',                
-            })            
-        return;
-    }
-
-
-    if (id_tipo_personal_s == undefined || id_tipo_personal_s == null || id_tipo_personal_s.trim() == "") {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Se debe ingresar el tipo personal a capacitar',
-        })
-        return;
-
-    }
-
-
-    let formulario = new FormData(document.getElementById("solicitar-capacitacion"))
-    fetch('index.php?view=solicitar-capacitacion', {
-        method: "post",
-        body: formulario
-    }).then((response) => {
-
-        Swal.fire({
-            title: 'Solicitud creada exitosamente',
-            showDenyButton: false,
-            showCancelButton: false,
-            confirmButtonText: 'Ok',
-        }).then((result) => {
-            location.reload();
-        })
-        /*acciones a realizar*/
-    }).then((data) => {
-        /*mas acciones a realizar*/
-    })
-}
 </script>

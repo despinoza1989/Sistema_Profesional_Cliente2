@@ -1,6 +1,6 @@
 <?php
 
-class CrearAsesoriaController{
+class SolicitudAsesoria{
     function __construct(){
         //echo "esto funciona";
 
@@ -25,7 +25,7 @@ class CrearAsesoriaController{
 
         //Llamar a la vista 
         require_once "views/layout/header.php";
-        require_once "views/layout/asesoria/crear_asesoria.php";
+        require_once "views/layout/asesoria/solicitar_asesoria.php";
         require_once "views/layout/footer.php";
 
     }

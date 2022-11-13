@@ -86,9 +86,9 @@ session_start();
                     $ctrl = new DetalleMejorasController();
                     break;
 
-                case 'crear-asesoria':
-                    require_once "controllers/CrearAsesoriaController.php";
-                    $ctrl = new CrearAsesoriaController();
+                case 'solicitar-asesoria':
+                    require_once "controllers/SolicitudAsesoria.php";
+                    $ctrl = new SolicitudAsesoria();
                     break;
 
                 case 'listar-asesoria':

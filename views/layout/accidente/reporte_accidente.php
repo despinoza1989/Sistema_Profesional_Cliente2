@@ -37,7 +37,9 @@
 
 
 <script>
+
     function registrarAccidente(){
+
         var cantidad_personas=document.getElementById("cantidad_personas").value;
         var fecha_accidente=document.getElementById("fecha_accidente").value;
         var detalle_accidente=document.getElementById("detalle_accidente").value;
@@ -84,14 +86,82 @@
                 showDenyButton: false,
                 showCancelButton: false,
                 confirmButtonText: 'Ok',
-                }).then((result) => {
-                    location.reload();
+            }).then((result) => {
+                location.reload();
+            })
+
+
+            //Mensaje Profesional
+            var id_cliente= document.getElementById('id_cliente_ra').value;
+
+            if(id_cliente && id_cliente>0){
+
+                fetch("api.php/asignacion-profesional-cliente/" + id_cliente, {
+                    method: "get"            
+                }).then(response=>response.json())
+                .then((datos)=>{
+
+                    console.dir(datos, "Datos Profesional")
+                    
+                    for (const key in datos) {
+
+                    crearNotificacion("El Cliente a reportado un accidente", 0, 0, datos[key].id_personal_ap, 0, "reporte_accidente")
+
+                    }
+
                 })
+
+            }
+            
+            //Mensaje Administrativo
+            fetch("api.php/personal_administrativo", {
+                method: "get"
+            }).then(response => response.json())
+            .then((datos) => {
+
+                console.dir(datos)
+                
+                for (const key in datos) {
+
+                    crearNotificacion("El Cliente a reportado un accidente", 0, 0, datos[key].id_personal, 0, "reporte_accidente")
+
+                }
+
+            })
+
             /*acciones a realizar*/     
         }).then((data) => {
             /*mas acciones a realizar*/
         })
         
+    }
+
+    function crearNotificacion(mensaje_notificacion, estado_notificacion, is_cliente, custom_user_id, custom_option_id, tipo_notificacion){
+        
+        var request = {
+
+            mensaje_notificacion: mensaje_notificacion,
+            estado_notificacion: estado_notificacion,
+            is_cliente: is_cliente,
+            custom_user_id: custom_user_id,
+            custom_option_id: custom_option_id,
+            tipo_notificacion: tipo_notificacion
+
+        }
+
+        fetch('api.php/notificaciones', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(request)
+        }).then((response) => {
+            
+            console.log(response)
+            /*acciones a realizar*/     
+        }).then((data) => {
+            /*mas acciones a realizar*/
+        })
     }
 
 </script>

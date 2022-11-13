@@ -4,7 +4,7 @@
     <br>
     <h2> Cliente Solicitante </h2>
     <br>
-    <form id="crear_asesoria" class="row g-3 needs-validation">
+    <form id="solicitar_asesoria" class="row g-3 needs-validation">
 
         <div class="col-md-6">
             <label for="id_tipo_asesoria_sa" class="form-label">Tipo de asesoría</label>
@@ -62,18 +62,19 @@
     <br>
     <br>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary col-2" onclick="crearAsesoria()">Solicitar Asesoría</button>
+        <button class="btn btn-primary col-2" onclick="solicitarAsesoria()">Solicitar Asesoría</button>
         <button class="btn btn-warning col-2" onclick="location.reload()">Limpiar</button>
     </div>
 </div>
 
 <script>
-    function crearAsesoria(){
+
+    function solicitarAsesoria(){
+
         var detalle_asesoria=document.getElementById("detalle_asesoria").value;
         var id_tipo_asesoria_sa=document.getElementById("id_tipo_asesoria_sa").value;
-        console.log( detalle_asesoria)
 
-      
+        console.log( detalle_asesoria, id_tipo_asesoria_sa)
 
         if(id_tipo_asesoria_sa==undefined || id_tipo_asesoria_sa==null || id_tipo_asesoria_sa.trim()=="" ){
             Swal.fire({
@@ -96,8 +97,9 @@
         }
 
 
-        let formulario = new FormData(document.getElementById("crear_asesoria"))
-        fetch('index.php?view=crear-asesoria', {
+        let formulario = new FormData(document.getElementById("solicitar_asesoria"))
+
+        fetch('index.php?view=solicitar-asesoria', {
             method: "post",
             body: formulario
         }).then((response) => {
@@ -107,9 +109,47 @@
                 showDenyButton: false,
                 showCancelButton: false,
                 confirmButtonText: 'Ok',
-                }).then((result) => {
-                    location.reload();
+            }).then((result) => {
+                location.reload();
+            })
+
+            //Mensaje Profesional
+            var id_cliente= document.getElementById('id_cliente_sa').value;
+
+            if(id_cliente && id_cliente>0){
+
+                fetch("api.php/asignacion-profesional-cliente/" + id_cliente, {
+                    method: "get"            
+                }).then(response=>response.json())
+                .then((datos)=>{
+
+                    console.dir(datos)
+                    
+                    for (const key in datos) {
+
+                    crearNotificacion("El Cliente a solicitado una asesoría nueva", 0, 0, datos[key].id_personal_ap, 0, "solicitar_asesoria")
+
+                    }
+
                 })
+
+            }
+
+            //Mensaje Administrativo
+            fetch("api.php/personal_administrativo", {
+                method: "get"
+            }).then(response => response.json())
+            .then((datos) => {
+
+                console.dir(datos)
+                
+                for (const key in datos) {
+
+                    crearNotificacion("El Cliente a solicitado una asesoría nueva", 0, 0, datos[key].id_personal, 0, "solicitar_asesoria")
+
+                }
+
+            })                
             /*acciones a realizar*/     
         }).then((data) => {
             /*mas acciones a realizar*/
@@ -117,40 +157,63 @@
         
     }
 
-</script>
+    function crearNotificacion(mensaje_notificacion, estado_notificacion, is_cliente, custom_user_id, custom_option_id, tipo_notificacion){
+        
+        var request = {
 
+            mensaje_notificacion: mensaje_notificacion,
+            estado_notificacion: estado_notificacion,
+            is_cliente: is_cliente,
+            custom_user_id: custom_user_id,
+            custom_option_id: custom_option_id,
+            tipo_notificacion: tipo_notificacion
 
-<script> 
+        }
 
-(function(){
-
-    document.getElementById('rol_cliente').addEventListener('change', onChangeRol)
-
-})()
-
-function onChangeRol(event){
-
-    var id_cliente= document.getElementById('rol_cliente').value;
-    
-    if(id_cliente && id_cliente>0){
-
-        fetch("api.php/cliente/" + id_cliente, {
-            method: "get"            
-        }).then(response=>response.json())
-        .then((datos)=>{
-
-            console.dir(datos)
-
-            document.getElementById('razon_social_cliente').value=datos.razon_social_cliente;
-            document.getElementById('telefono_cliente').value=datos.telefono_cliente;
-            document.getElementById('direccion_cliente').value=datos.direccion_cliente;
-            document.getElementById('email_cliente').value=datos.email_cliente;
-
+        fetch('api.php/notificaciones', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(request)
+        }).then((response) => {
+            
+            console.log(response)
+            /*acciones a realizar*/     
+        }).then((data) => {
+            /*mas acciones a realizar*/
         })
-
     }
-    
-}
+
+    /*(function(){
+
+        document.getElementById('rol_cliente').addEventListener('change', onChangeRol)
+
+    })()
+
+    function onChangeRol(event){
+
+        var id_cliente= document.getElementById('rol_cliente').value;
+        
+        if(id_cliente && id_cliente>0){
+
+            fetch("api.php/cliente/" + id_cliente, {
+                method: "get"            
+            }).then(response=>response.json())
+            .then((datos)=>{
+
+                console.dir(datos)
+
+                document.getElementById('razon_social_cliente').value=datos.razon_social_cliente;
+                document.getElementById('telefono_cliente').value=datos.telefono_cliente;
+                document.getElementById('direccion_cliente').value=datos.direccion_cliente;
+                document.getElementById('email_cliente').value=datos.email_cliente;
+
+            })
+
+        }
+        
+    }*/
 
 
 </script>
