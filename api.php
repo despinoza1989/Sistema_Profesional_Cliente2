@@ -27,6 +27,7 @@ require "models/TipoUsuarioModel.php";
 require "models/VisitaTerrenoModel.php";
 require "models/AsignacionProfesionalModel.php";
 require "models/DetalleChecklistModel.php";
+require "models/NotificacionModel.php";
 
 $configuration = [
     'settings' => [
@@ -508,5 +509,40 @@ $app->get('/detalle-check-list/{id_detalle_check_list}', function (Request $requ
     return $response->withJson($datos);
 
 });
+
+//MODELS NOTIFICACIONES
+
+$app->get('/notificaciones', function (Request $request, Response $response, array $args) {
+     
+    $model = new NotificacionModel();
+    $datos = $model->getAll();
+    return $response->withJson($datos);
+
+});
+$app->get('/notificaciones/{id_notificaciones}', function (Request $request, Response $response, array $args) {
+    
+    $id_notificaciones = $args["id_notificaciones"];    
+    $model = new NotificacionModel();
+    $datos = $model->getById($id_notificaciones);
+    return $response->withJson($datos);
+
+});
+
+$app->post('/notificaciones', function (Request $request, Response $response, array $args) {
+    
+    $model = new NotificacionModel();
+    $datos = $model->create($request->getParsedBody());
+    return $response->withJson($datos);
+
+});
+
+$app->put('/notificaciones', function (Request $request, Response $response, array $args) {
+    
+    $model = new NotificacionModel();
+    $datos = $model->update($request->getParsedBody());
+    return $response->withJson($datos);
+
+});
+
 
 $app->run();
