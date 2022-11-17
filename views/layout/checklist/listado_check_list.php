@@ -6,10 +6,9 @@
                 <th>Rut Profesional</th>
                 <th>Nombre Profesional</th>
                 <th>Apellidos Profesional</th>                
-                <th>Rol Cliente</th>
-                <th>Razón Social Cliente</th>
+                <th>Teléfono Profesional</th>
+                <th>Email Profesional</th>
                 <th>Fecha/Hora Check-List</th>
-                <th>Observación General</th>
                 <th>Opciones</th>
             </tr>
 
@@ -19,10 +18,9 @@
                     <td><?php echo $row["rut_personal"]?></td>
                     <td><?php echo $row["nombre_personal"]?></td>
                     <td><?php echo $row["apellidos_personal"]?></td>
-                    <td><?php echo $row["rol_cliente"]?></td>
-                    <td><?php echo $row["razon_social_cliente"]?></td>
+                    <td><?php echo $row["telefono_personal"]?></td>
+                    <td><?php echo $row["email_personal"]?></td>
                     <td><?php echo $row["fecha_check_list"]?></td>
-                    <td><?php echo $row["obs_check_general"]?></td>
                     <td>
                         <a href="index.php?view=detalle-check-list&id_check_list=<?php echo $row["id_check_list"]?>" class="btn btn-info btn-sm">Ver Detalle</a>
                     </td>         
