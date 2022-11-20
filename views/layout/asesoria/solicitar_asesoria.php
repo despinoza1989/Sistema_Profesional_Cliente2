@@ -57,7 +57,8 @@
         <input type="hidden" id="accion" name="accion" value="registrar">
         
         <input type="hidden" id="id_cliente_sa" name="id_cliente_sa" value="<?php echo $datosusuariocliente['id_cliente']?>">
-    
+        <input type="hidden" id="razon_social_cliente" name="razon_social_cliente" value="<?php echo $datosusuariocliente['razon_social_cliente'] ?>">
+
     </form>
     <br>
     <br>
@@ -127,7 +128,7 @@
                     
                     for (const key in datos) {
 
-                    crearNotificacion("El Cliente a solicitado una asesoría nueva", 0, 0, datos[key].id_personal_ap, 0, "solicitar_asesoria")
+                    crearNotificacion("El Cliente " + document.getElementById('razon_social_cliente').value + " a solicitado una asesoría nueva", 0, 0, datos[key].id_personal_ap, 0, "solicitar_asesoria")
 
                     }
 
@@ -145,7 +146,7 @@
                 
                 for (const key in datos) {
 
-                    crearNotificacion("El Cliente a solicitado una asesoría nueva", 0, 0, datos[key].id_personal, 0, "solicitar_asesoria")
+                    crearNotificacion("El Cliente " + document.getElementById('razon_social_cliente').value + " a solicitado una asesoría nueva", 0, 0, datos[key].id_personal, 0, "solicitar_asesoria")
 
                 }
 
