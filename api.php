@@ -543,13 +543,15 @@ $app->get('/detalle-check-list/{id_detalle_check_list}', function (Request $requ
 
 //MODELS NOTIFICACIONES
 
-$app->get('/notificaciones', function (Request $request, Response $response, array $args) {
+$app->get('/notificaciones/user/{custom_user_id}', function (Request $request, Response $response, array $args) {
      
+    $custom_user_id = $args["custom_user_id"];  
     $model = new NotificacionModel();
-    $datos = $model->getAll();
+    $datos = $model->getByUser($custom_user_id);
     return $response->withJson($datos);
 
 });
+
 $app->get('/notificaciones/{id_notificaciones}', function (Request $request, Response $response, array $args) {
     
     $id_notificaciones = $args["id_notificaciones"];    
@@ -559,6 +561,16 @@ $app->get('/notificaciones/{id_notificaciones}', function (Request $request, Res
 
 });
 
+$app->get('/notificaciones/cantidad/{custom_user_id}', function (Request $request, Response $response, array $args) {
+     
+    $custom_user_id = $args["custom_user_id"];  
+    $model = new NotificacionModel();
+    $datos = $model->getByUserCount($custom_user_id);
+    return $response->withJson($datos);
+
+});
+
+
 $app->post('/notificaciones', function (Request $request, Response $response, array $args) {
     
     $model = new NotificacionModel();
@@ -567,13 +579,15 @@ $app->post('/notificaciones', function (Request $request, Response $response, ar
 
 });
 
-$app->put('/notificaciones', function (Request $request, Response $response, array $args) {
-    
+$app->put('/notificaciones/{id_notificaciones}', function (Request $request, Response $response, array $args) {
+
+    $id_notificaciones = $args["id_notificaciones"];
     $model = new NotificacionModel();
-    $datos = $model->update($request->getParsedBody());
+    $datos = $model->updateEstado($id_notificaciones);
     return $response->withJson($datos);
 
 });
+
 
 
 $app->run();
