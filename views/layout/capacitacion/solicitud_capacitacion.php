@@ -176,7 +176,7 @@
                     
                     for (const key in datos) {
 
-                    crearNotificacion("El Cliente " + document.getElementById('razon_social_cliente').value + " a solicitado una capacitación", 0, 0, datos[key].id_personal_ap, 0, "solicitar_capacitacion")
+                    crearNotificacion("El Cliente " + document.getElementById('razon_social_cliente').value + " a solicitado una capacitación, para el " + document.getElementById('fecha_solicitud_capacitacion').value.replace('T', ' '), 0, 0, datos[key].id_personal_ap, 0, "solicitar_capacitacion")
 
                     }
 
@@ -194,7 +194,7 @@
                 
                 for (const key in datos) {
 
-                    crearNotificacion("El Cliente " + document.getElementById('razon_social_cliente').value + " a solicitado una capacitación", 0, 0, datos[key].id_personal, 0, "solicitar_capacitacion")
+                    crearNotificacion("El Cliente " + document.getElementById('razon_social_cliente').value + " a solicitado una capacitación, para el " + document.getElementById('fecha_solicitud_capacitacion').value.replace('T', ' '), 0, 0, datos[key].id_personal, 0, "solicitar_capacitacion")
 
                 }
 
