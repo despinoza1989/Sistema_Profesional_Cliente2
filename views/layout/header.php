@@ -88,8 +88,7 @@
                     Manuales
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Manual de Usuarios</a></li>
-                    <li><a class="dropdown-item" href="#">Manual de Requerimientos</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="openManual()">Manual de Usuarios</a></li>
                 </ul>
             </li>
 
@@ -110,32 +109,38 @@
 
 <script>
 
-var id = <?php echo $_SESSION['usuarioCliente']['id_cliente']; ?>
+    var id = <?php echo $_SESSION['usuarioCliente']['id_cliente']; ?>
 
 
-function init (){
+    function init (){
 
-    fetch('api.php/notificaciones/cantidad/' + id, {
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(response=>response.json())
-    .then((data) => {
-
-
-        document.getElementById('cantidad').innerHTML=data.cantidad;
-        setTimeout(() => {
-            init()
-        }, 5000);
-    })
+        fetch('api.php/notificaciones/cantidad/' + id, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response=>response.json())
+        .then((data) => {
 
 
+            document.getElementById('cantidad').innerHTML=data.cantidad;
+            setTimeout(() => {
+                init()
+            }, 5000);
+        })
 
-}
 
-init()
 
+    }
+
+    init()
+
+
+    function openManual(){
+                    
+        window.open('http://localhost/sistema_profesional_cliente/assents/manual/ManualFerme.pdf');
+            
+    }
 
 
 </script>
