@@ -130,7 +130,7 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'La Fecha a solicitar la capacitación debe con al menos 2 días de anticipación',                
+                text: 'La Fecha a solicitar la capacitación debe ser con al menos 2 días de anticipación',                
                 })            
             return;
         }
