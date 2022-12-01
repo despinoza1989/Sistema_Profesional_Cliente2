@@ -38,8 +38,12 @@
             console.log(data)
 
             //index.php?view=detalle-check-list-admin&id_check_list=12
-            if(data.tipo_notificacion=='crear_checklist'){
-                location.href="index.php?view=detalle-check-list-admin&id_check_list="+data.custom_option_id;
+            if(data.tipo_notificacion=='modificar_asignar'){
+                location.href="index.php?view=datos-profesional&id_personal="+data.custom_option_id;
+            }
+
+            if(data.tipo_notificacion=='modificar_capacitacion'){
+                location.href="index.php?view=detalle-capacitaciones&id_crear_capacitacion="+data.custom_option_id;
             }
 
         /*mas acciones a realizar*/

@@ -140,7 +140,27 @@ session_start();
                     require_once "controllers/NotificacionesController.php";
                     $ctrl = new NotificacionesController();
                     break;
-                
+
+                case 'contrato':
+                    require_once "controllers/ContratoController.php";
+                    $ctrl = new ContratoController();
+                    break;
+
+                case 'listado-contrato':
+                    require_once "controllers/ListadoContratosController.php";
+                    $ctrl = new ListadoContratosController();
+                    break;
+
+                case 'datos-profesional':
+                    require_once "controllers/DatosProfesionalController.php";
+                    $ctrl = new DatosProfesionalController();
+                    break;  
+
+                case 'listado-asignaciones-profesional':
+                    require_once "controllers/ListadoAsignacionProfesionalController.php";
+                    $ctrl = new ListadoAsignacionProfesionalController();
+                    break;
+
                 case 'logout':
                     session_unset();
                     header("refresh: 1; url=index.php");

@@ -3,67 +3,66 @@
     <h2> Pago de Servicios </h2>
     <br>
     <form id="registro_pago" class="row g-3 needs-validation">
+        <h2>Datos de Cliente</h2>
         <div class="col-md-6">
             <label for="rol_cliente" class="form-label">Rol</label>
-            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['rol_cliente']?>"  disabled required>
+            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datos_pago['rol_cliente']?>"  disabled required>
         </div>
 
         <div class="col-md-6">
             <label for="razon_social_cliente" class="form-label">Razón Social</label>
-            <input type="text" class="form-control" placeholder="" id="razon_social_cliente" name="razon_social_cliente=" value="<?php echo $datosusuariocliente['razon_social_cliente']?>" disabled required>
+            <input type="text" class="form-control" placeholder="" id="razon_social_cliente" name="razon_social_cliente=" value="<?php echo $datos_pago['razon_social_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
             <label for="direccion_cliente" class="form-label">Dirección</label>
-            <input type="text" class="form-control" placeholder="" id="direccion_cliente" name="direccion_cliente" value="<?php echo $datosusuariocliente['direccion_cliente']?>" disabled required>
+            <input type="text" class="form-control" placeholder="" id="direccion_cliente" name="direccion_cliente" value="<?php echo $datos_pago['direccion_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
-            <label for="rol_cliente" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" placeholder="" id="rol_cliente" name="rol_cliente" value="<?php echo $datosusuariocliente['telefono_cliente']?>" disabled required>
+            <label for="telefono_cliente" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" placeholder="" id="telefono_cliente" name="rol_cliente" value="<?php echo $datos_pago['telefono_cliente']?>" disabled required>
         </div>
 
         <div class="col-md-6">
             <label for="email_cliente" class="form-label">Email</label>
             <div class="input-group mb-3"> 
                 <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="text" class="form-control" placeholder="" id="email_cliente" name="email_cliente" value="<?php echo $datosusuariocliente['email_cliente']?>" disabled required>
+                <input type="text" class="form-control" placeholder="" id="email_cliente" name="email_cliente" value="<?php echo $datos_pago['email_cliente']?>" disabled required>
             </div>
         </div>
 
+        <h2>Datos de Plan</h2>
         <div class="col-md-6">
-            <label for="id_tipo_documento_ps" class="form-label">Tipo de Documento</label>
-            <select class="form-select" id="id_tipo_documento_ps" name="id_tipo_documento_ps" required>
-                <option selected disabled value="">Seleccione Tipo de Documento</option>
-                <?php foreach ($datos_tipodocumento as $row){ ?>
-                    <option value="<?php echo $row["id_tipo_documento"] ?>"><?php echo $row["tipo_documento"] ?></option>
-                <?php } ?>
-            </select>
-            <div class="invalid-feedback">
-
-            </div>
+            <label for="nombre_plan" class="form-label">Nombre del Plan</label>
+            <input type="text" class="form-control" placeholder="" id="nombre_plan" name="nombre_plan" value="<?php echo $datos_pago['nombre_plan']?>" disabled required>
         </div>
-
         <div class="col-md-6">
-            <label for="id_tipo_pago_ps" class="form-label">Modo de Pago</label>
-            <select class="form-select" id="id_tipo_pago_ps" name="id_tipo_pago_ps" required>
-                <option selected disabled value="">Seleccione Tipo de Pago</option>
-                <?php foreach ($datos_tipopago as $row){ ?>
-                    <option value="<?php echo $row["id_tipo_pago"] ?>"><?php echo $row["tipo_pago"] ?></option>
-                <?php } ?>
-            </select>
-            <div class="invalid-feedback">
-
-            </div>
+            <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento</label>
+            <input type="text" class="form-control" placeholder="" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $datos_pago['fecha_vencimiento']?>" disabled required>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-12">
+            <label for="descripcion_plan" class="form-label">Descripción del Plan</label>
+            <input type="text" class="form-control" placeholder="" id="descripcion_plan" name="descripcion_plan" value="<?php echo $datos_pago['descripcion_plan']?>" disabled required>
+        </div>
+
+        <h2>Datos de Pago</h2>
+        <div class="col-md-3">
             <label for="monto_pago" class="form-label">Monto a Pagar</label>
             <div class="input-group mb-3">        
                 <span class="input-group-text">$</span>
-                <input type="text" class="form-control" id="monto_pago" name="monto_pago" value="160.000" disabled>
+                <input type="text" class="form-control" id="monto_pago" name="monto_pago" value="<?php echo $datos_pago['monto_plan']?>" disabled>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
+            <label for="tipo_documento" class="form-label">Tipo de Documento</label>
+            <input type="text" class="form-control" placeholder="" id="tipo_documento" name="tipo_documento" value="<?php echo $datos_pago['tipo_documento']?>" disabled required>
+        </div>
+        <div class="col-md-3">
+            <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento</label>
+            <input type="text" class="form-control" placeholder="" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $datos_pago['fecha_vencimiento']?>" disabled required>
+        </div>
+        <div class="col-md-3">
             <label for="fecha_pago" class="form-label">Fecha de Pago</label>
             <input type="datetime-local" class="form-control" id="fecha_pago" name="fecha_pago" required>
             <div class="invalid-feedback">
@@ -73,9 +72,9 @@
     <br>
 
         <input type="hidden" id="accion" name="accion" value="registrar">
-        <input type="hidden" id="estado_pago" name="estado_pago" value="Pagado">
-        <input type="hidden" id="id_plan_servicio_ps" name="id_plan_servicio_ps" value="1">
-        <input type="hidden" id="id_cliente_ra" name="id_cliente_ra" value="<?php echo $datosusuariocliente['id_cliente']?>">
+        <input type="hidden" id="id_cliente_c" name="id_cliente_c" value="<?php echo $datos_pago['id_cliente_c'] ?>">
+        <input type="hidden" id="estado_pago" name="estado_pago" value="1">
+        <input type="hidden" id="id_pago_servicio" name="id_pago_servicio" value="">
     
     </form>
     <br><br><br>
@@ -89,12 +88,58 @@
 
 
 <script>
+
+    (function() {
+
+    document.getElementById('id_cliente_c').addEventListener('change', onChangeIdCliente)
+
+    })()
+
+    function onChangeIdCliente(event) {
+
+    var id_cliente = document.getElementById('id_cliente_c').value;
+
+    if (id_cliente && id_cliente > 0) {
+
+        fetch("api.php/pago-servicio/cliente/" + id_cliente, {
+                method: "get"
+            }).then(response => response.json())
+            .then((datos) => {
+
+                console.dir(datos)
+                document.getElementById('rol_cliente').value = datos.rol_cliente;
+                document.getElementById('razon_social_cliente').value = datos.razon_social_cliente;
+                document.getElementById('direccion_cliente').value = datos.direccion_cliente;                
+                document.getElementById('telefono_cliente').value = datos.telefono_cliente;
+                document.getElementById('email_cliente').value = datos.email_cliente;
+
+                document.getElementById('nombre_plan').value = datos.nombre_plan;
+                document.getElementById('fecha_vencimiento').value = datos.fecha_vencimiento;
+                document.getElementById('descripcion_plan').value = datos.descripcion_plan;
+
+                document.getElementById('monto_pago').value = datos.monto_plan;
+                document.getElementById('tipo_documento').value = datos.tipo_documento;
+                document.getElementById('fecha_vencimiento').value = datos.fecha_vencimiento;
+                document.getElementById('id_pago_servicio').value = datos.id_pago_servicio;
+
+            })
+
+    }
+
+    }
+
+
+
+
     function registrarPago(){
-        var id_tipo_pago_ps=document.getElementById("id_tipo_pago_ps").value;
-        var id_tipo_documento_ps=document.getElementById("id_tipo_documento_ps").value;
+        var monto_pago=document.getElementById("monto_pago").value;
+        var fecha_pago=document.getElementById("fecha_pago").value;
+        var id_pago_servicio=document.getElementById('id_pago_servicio').value;
+
+        console.log(monto_pago, fecha_pago, id_pago_servicio)
               
 
-        if(id_tipo_pago_ps==undefined || id_tipo_pago_ps==null || id_tipo_pago_ps.trim()==""){
+        /*if(id_tipo_pago_ps==undefined || id_tipo_pago_ps==null || id_tipo_pago_ps.trim()==""){
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -112,13 +157,27 @@
                 })            
             return;
 
+        }*/
+
+
+        
+        var datos_formulario = {
+
+            id_pago_servicio:document.getElementById("id_pago_servicio").value,
+            estado_pago:document.getElementById('estado_pago').value,
+            fecha_pago:document.getElementById("fecha_pago").value,
+            monto_pago:document.getElementById("monto_pago").value,
+            
+
         }
 
-
         let formulario = new FormData(document.getElementById("registro_pago"))
-        fetch('index.php?view=pago-servicio', {
+        fetch('api.php/pago-servicio', {
             method: "post",
-            body: formulario
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos_formulario)
         }).then((response) => {
             
             Swal.fire({

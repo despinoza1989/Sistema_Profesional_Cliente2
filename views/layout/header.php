@@ -78,8 +78,16 @@
             </li>
 
             <!-- PESTAÑA PAGO -->
-            <li class="nav-item">
-                <a class="nav-link active" href="index.php?view=pago-servicio">Pago</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Administrativo
+                </a>    
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.php?view=pago-servicio">Realizar Pago</a></li>
+                    <li><a class="dropdown-item" href="index.php?view=listado-contrato">Listado de Contratos</a></li>
+                    <li><a class="dropdown-item" href="index.php?view=listado-asignaciones-profesional">Asignación Profesional</a></li>
+                </ul>                
             </li>
 
             <!-- PESTAÑA MANUALES CON SUB MENUS -->
