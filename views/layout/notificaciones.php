@@ -46,6 +46,11 @@
                 location.href="index.php?view=detalle-capacitaciones&id_crear_capacitacion="+data.custom_option_id;
             }
 
+            if(data.tipo_notificacion=='crear_contrato'){
+                location.href="index.php?view=contrato&id_contrato="+data.custom_option_id;
+            }
+
+
         /*mas acciones a realizar*/
         })
 
