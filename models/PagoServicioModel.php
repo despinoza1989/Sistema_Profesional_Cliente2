@@ -65,7 +65,8 @@ class PagoServicioModel {
         LEFT JOIN contrato AS co ON co.id_contrato = ps.id_contrato_ps
         LEFT JOIN plan_servicio AS pls ON pls.id_plan_servicio = co.id_plan_servicio_c
         LEFT JOIN tipo_documento AS td ON td.id_tipo_documento = id_tipo_documento_c
-        LEFT JOIN cliente AS cl ON cl.id_cliente = co.id_cliente_c WHERE co.id_cliente_c = '". $id_cliente_c ."'"; 
+        LEFT JOIN cliente AS cl ON cl.id_cliente = co.id_cliente_c WHERE co.id_cliente_c = '". $id_cliente_c ."' AND ps.estado_pago=0
+        ORDER BY ps.fecha_vencimiento ASC LIMIT 1"; 
         $result = $conexion->query($query);
         $response = array();
         while($row = mysqli_fetch_assoc($result)) { $response = $row; }
@@ -87,7 +88,7 @@ class PagoServicioModel {
     function update($data) {
 
         $conexion= Database::connect();
-        $queryUpdate = "UPDATE pago_servicio SET estado_pago = '". $data['estado_pago']."', fecha_pago = '". $data['fecha_pago']."', monto_pago = '". $data['monto_pago']."' WHERE id_pago_servicio = '".$data['id_pago_servicio']."'";
+        $queryUpdate = "UPDATE pago_servicio SET estado_pago = '1', fecha_pago = now() WHERE id_pago_servicio = '".$data['id_pago_servicio']."'";
         $result = $conexion->query($queryUpdate);
         $conexion->close();
         return $result;

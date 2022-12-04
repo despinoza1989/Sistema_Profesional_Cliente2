@@ -38,8 +38,8 @@
             <input type="text" class="form-control" placeholder="" id="nombre_plan" name="nombre_plan" value="<?php echo $datos_pago['nombre_plan']?>" disabled required>
         </div>
         <div class="col-md-6">
-            <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento</label>
-            <input type="text" class="form-control" placeholder="" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $datos_pago['fecha_vencimiento']?>" disabled required>
+            <label for="fecha_fin_c" class="form-label">Fecha de Vencimiento</label>
+            <input type="text" class="form-control" placeholder="" id="fecha_fin_c" name="fecha_fin_c" value="<?php echo $datos_pago['fecha_fin_c']?>" disabled required>
         </div>
         <div class="col-md-12">
             <label for="descripcion_plan" class="form-label">Descripción del Plan</label>
@@ -62,19 +62,13 @@
             <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento</label>
             <input type="text" class="form-control" placeholder="" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $datos_pago['fecha_vencimiento']?>" disabled required>
         </div>
-        <div class="col-md-3">
-            <label for="fecha_pago" class="form-label">Fecha de Pago</label>
-            <input type="datetime-local" class="form-control" id="fecha_pago" name="fecha_pago" required>
-            <div class="invalid-feedback">
-                Favor de introducir una fecha valida
-            </div>
-        </div>
+
     <br>
 
         <input type="hidden" id="accion" name="accion" value="registrar">
         <input type="hidden" id="id_cliente_c" name="id_cliente_c" value="<?php echo $datos_pago['id_cliente_c'] ?>">
         <input type="hidden" id="estado_pago" name="estado_pago" value="1">
-        <input type="hidden" id="id_pago_servicio" name="id_pago_servicio" value="">
+        <input type="hidden" id="id_pago_servicio" name="id_pago_servicio" value="<?php echo $datos_pago['id_pago_servicio'] ?>">
     
     </form>
     <br><br><br>
@@ -89,7 +83,7 @@
 
 <script>
 
-    (function() {
+    /*(function() {
 
     document.getElementById('id_cliente_c').addEventListener('change', onChangeIdCliente)
 
@@ -126,17 +120,15 @@
 
     }
 
-    }
+    }*/
 
-
-
+  
 
     function registrarPago(){
-        var monto_pago=document.getElementById("monto_pago").value;
-        var fecha_pago=document.getElementById("fecha_pago").value;
+        //var fecha_pago=document.getElementById("fecha_pago").value;
         var id_pago_servicio=document.getElementById('id_pago_servicio').value;
 
-        console.log(monto_pago, fecha_pago, id_pago_servicio)
+        console.log(id_pago_servicio)
               
 
         /*if(id_tipo_pago_ps==undefined || id_tipo_pago_ps==null || id_tipo_pago_ps.trim()==""){
@@ -160,14 +152,11 @@
         }*/
 
 
-        
+
         var datos_formulario = {
 
             id_pago_servicio:document.getElementById("id_pago_servicio").value,
             estado_pago:document.getElementById('estado_pago').value,
-            fecha_pago:document.getElementById("fecha_pago").value,
-            monto_pago:document.getElementById("monto_pago").value,
-            
 
         }
 
