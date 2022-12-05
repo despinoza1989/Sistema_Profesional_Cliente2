@@ -41,14 +41,51 @@
             if(data.tipo_notificacion=='modificar_asignar'){
                 location.href="index.php?view=datos-profesional&id_personal="+data.custom_option_id;
             }
-
-            if(data.tipo_notificacion=='modificar_capacitacion'){
-                location.href="index.php?view=detalle-capacitaciones&id_crear_capacitacion="+data.custom_option_id;
-            }
-
-            if(data.tipo_notificacion=='crear_contrato'){
-                location.href="index.php?view=contrato&id_contrato="+data.custom_option_id;
-            }
+            if (data.tipo_notificacion=='asignar_profesional') {
+                location.href="index.php?view=datos-profesional&id_personal="+data.custom_option_id;
+            } 
+            if (data.tipo_notificacion=='solicitar_capacitacion') {
+                location.href="index.php?view=listar-respuesta-capacitacion";
+            } 
+            if (data.tipo_notificacion=='modificar_capacitacion') {
+                location.href="index.php?view=listar-respuesta-capacitacion";
+            } 
+            if (data.tipo_notificacion=='crear_capacitacion_s') {
+                location.href="index.php?view=listar-respuesta-capacitacion";
+            } 
+            if (data.tipo_notificacion=='crear_capacitacion') {
+                location.href="index.php?view=listar-respuesta-capacitacion";
+            } 
+            if (data.tipo_notificacion=='solicitar_asesoria') {
+                location.href="index.php?view=listar-respuesta-asesoria";
+            } 
+            if (data.tipo_notificacion=='crear_mejora') {
+                location.href="index.php?view=listado-mejora";
+            } 
+            if (data.tipo_notificacion=='modificar_mejora') {
+                location.href="index.php?view=listado-mejora";
+            } 
+            if (data.tipo_notificacion=='modificar_checklist') {
+                location.href="index.php?view=listado-check-list";
+            } 
+            if (data.tipo_notificacion=='crear_visita') {
+                location.href="index.php?view=listado-visita-profesional";
+            } 
+            if (data.tipo_notificacion=='reporte_accidente') {
+                location.href="index.php?view=listar-accidentes";
+            }             
+            if (data.tipo_notificacion=='crear_checklist') {
+                location.href="index.php?view=listado-check-list";
+            }             
+            if (data.tipo_notificacion=='modificar_mejora') {
+                location.href="index.php?view=listado-mejora-admin";
+            } 
+            if (data.tipo_notificacion=='pago') {
+                location.href="index.php?view=estado-pago";
+            } 
+            if (data.tipo_notificacion=='respuesta_asesoria') {
+                location.href="index.php?view=listar-respuesta-asesoria";
+            } 
 
 
         /*mas acciones a realizar*/
