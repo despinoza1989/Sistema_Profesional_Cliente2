@@ -8,7 +8,7 @@
                 <th>Dirección</th>
                 <th>Correo</th>
                 <th>Teléfono</th>
-                <th>Detalle Asesoría</th>
+
             </tr>
 
             <?php foreach ($datos_asesoria as $row){ ?> 
@@ -19,13 +19,6 @@
                     <td><?php echo $row["direccion_cliente"]?></td>
                     <td><?php echo $row["email_cliente"]?></td>
                     <td><?php echo $row["telefono_cliente"]?></td>
-                    <td><?php echo $row["detalle_asesoria"]?></td>
-                   
-                    <td>
-                     
-                         
-
-                    </td>
                     <td>
                     <a href="index.php?view=respuesta-asesoria&id_solicitud_asesoria=<?php echo $row["id_solicitud_asesoria"]?>" class="btn btn-info btn-sm">Ver Solicitud</a>
                     </td>         

@@ -49,7 +49,7 @@ class RespuestaAsesoriaModel {
         $conexion= Database::connect();
         $query = "SELECT ra.id_respuesta_asesoria, ra.respuesta_asesoria, ra.id_solicitud_asesoria_ra, ra.id_personal_sa,
         sa.detalle_asesoria, sa.id_tipo_asesoria_sa, sa.id_cliente_sa, 
-        p.rut_personal, p.nombre_personal, p.apellidos_personal, ta.tipo_asesoria
+        p.rut_personal, p.nombre_personal, p.apellidos_personal, p.email_personal, p.telefono_personal, ta.tipo_asesoria
         FROM respuesta_asesoria AS ra
         LEFT JOIN solicitud_asesoria AS sa ON sa.id_solicitud_asesoria = ra.id_solicitud_asesoria_ra
         LEFT JOIN cliente AS c ON c.id_cliente = sa.id_cliente_sa

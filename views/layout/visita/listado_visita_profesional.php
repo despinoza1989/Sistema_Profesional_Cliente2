@@ -5,7 +5,6 @@
         <table class="table table-sm">
             <tr class="table table-striped table-hover table-responsive-sm">
                 <th>Fecha/Hora Visita</th>
-                <th>Motivo</th>
                 <th>Rol Cliente</th>
                 <th>Razón Social Cliente</th>
                 <th>Rut Profesional</th>
@@ -17,7 +16,6 @@
            
             <tr>
                 <td><?php echo $row["fecha_visita"]?></td>
-                <td><?php echo $row["motivo_visita"]?></td>
                 <td><?php echo $row["rol_cliente"]?></td>
                 <td><?php echo $row["razon_social_cliente"]?></td>
                 <td><?php echo $row["rut_personal"]?></td>

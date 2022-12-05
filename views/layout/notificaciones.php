@@ -77,16 +77,15 @@
             if (data.tipo_notificacion=='crear_checklist') {
                 location.href="index.php?view=listado-check-list";
             }             
-            if (data.tipo_notificacion=='modificar_mejora') {
-                location.href="index.php?view=listado-mejora-admin";
-            } 
             if (data.tipo_notificacion=='pago') {
                 location.href="index.php?view=estado-pago";
             } 
             if (data.tipo_notificacion=='respuesta_asesoria') {
                 location.href="index.php?view=listar-respuesta-asesoria";
             } 
-
+            if (data.tipo_notificacion=='crear_contrato') {
+                location.href="index.php?view=listado-contrato";
+            } 
 
         /*mas acciones a realizar*/
         })
