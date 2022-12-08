@@ -146,7 +146,7 @@
 
     function openManual(){
                     
-        window.open('http://localhost/sistema_profesional_cliente/assents/manual/ManualFerme.pdf');
+        window.open('http://localhost/sistema_profesional_cliente/assents/manual/Manual de Usuario NMA_Cliente.pdf');
             
     }
 
